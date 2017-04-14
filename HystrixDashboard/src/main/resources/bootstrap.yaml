@@ -1,0 +1,28 @@
+server:
+  port: 8079
+spring:
+  application:
+    name: hystrixDashboard
+  cloud:
+      consul:
+        discovery:
+          instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+          health-check-critical-timeout: 1m
+          prefer-ip-address: true
+        host: localhost
+        port: 8500
+
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul
+server:
+  port: 8080

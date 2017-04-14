@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: itemManagement # fixme: why does application.name not work???
+  cloud:
+    consul:
+#      config:
+#        failFast: false
+      discovery:
+        instanceid: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        prefer-ip-address: true
+#        preferIpAdress: true
+      host: localhost
+      port: 8500
+
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul
+server:
+  port: 8080

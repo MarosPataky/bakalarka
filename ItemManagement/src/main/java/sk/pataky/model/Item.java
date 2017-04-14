@@ -1,0 +1,75 @@
+package sk.pataky.model;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+public class Item extends BaseEntity {
+
+    private String name;
+
+    private String brand;
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Price> prices;
+//    private String image; // todo: figure this out
+
+    private String description;
+
+    public Long amount;
+
+    @Enumerated(EnumType.STRING)
+    public ItemQuantityUnit itemQuantityUnit;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Price> getPrices() {
+        if (prices == null) {
+            prices = new ArrayList<>();
+        }
+        return prices;
+    }
+
+    public void setPrices(List<Price> prices) {
+        this.prices = prices;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
+    }
+
+    public ItemQuantityUnit getItemQuantityUnit() {
+        return itemQuantityUnit;
+    }
+
+    public void setItemQuantityUnit(ItemQuantityUnit itemQuantityUnit) {
+        this.itemQuantityUnit = itemQuantityUnit;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+}

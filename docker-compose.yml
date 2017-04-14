@@ -1,0 +1,115 @@
+version: "2.0"
+
+services:
+  consul:
+    image: consul:latest
+    ports:
+      - "8500:8500"
+  start_dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - consul
+    command: consul:8500
+
+    #### services ####
+  apigateway:
+    image: bakalarka/apigateway
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080:8080"
+  itemmanagement:
+    # build: ./ItemManagement
+    image: bakalarka/itemmanagement
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8081:8080"
+    # links: ### not neeeded -> each container is accesible by it's name by default (since all container are on the same default network)
+    #   - consul:consul
+  shopservice:
+    # build: ./ShopService
+    image: bakalarka/shopservice
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8082:8080"
+
+  hystrixdashboard:
+    image: bakalarka/hystrixdashboard
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    # ports:
+    #   - "8079:8080"
+
+
+      
+  
+    
+  
+
+
+
+# version: '2'
+# services:
+#   consul: # Work in Progress
+#     image: progrium/consul:latest
+#     volumes:
+#       - /data
+#       - /config
+#       - ./src/test/resources/consul_ui:/ui ## TODO: what is this for?
+#     ports:
+#       - "8300:8300"
+#       - "8400:8400"
+#       - "8500:8500"
+#       - "8600:8600"
+#     command: -server -bootstrap -data-dir /data -ui-dir /ui
+#   # itemmanagement:
+#   #   image: bakalarka/itemmanagement
+#   #   # build: itemmanagement ## TODO: not working
+#   #   ports:
+#   #     - "8080"
+#   #   links:
+#   #     - consul:consul
+#   #   depends_on:
+#   #     - consul
+# reward:
+#  build: reward
+#  ports:
+#   - "8080"
+#  links:
+#   - mongodb
+# mission:
+#  build: mission
+#  ports:
+#   - "8080"
+#  links:
+#   - mongodb
+# mongodb:
+#  image: mongo
+# ha_employee:
+#  image: tutum/haproxy
+#  links:
+#    - employee
+#  ports:
+#    - "8080:80"
+# ha_mission:
+#  image: tutum/haproxy
+#  links:
+#    - mission
+#  ports:
+#    - "8081:80"
+# ha_reward:
+#  image: tutum/haproxy
+#  links:
+#    - reward
+#  ports:
+#    - "8082:80" 
