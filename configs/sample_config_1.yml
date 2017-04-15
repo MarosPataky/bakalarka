@@ -22,13 +22,3 @@ endpoints:
     enabled: true
     sensitive: false
 
-
----
-spring:
-  profiles: docker
-  cloud:
-    consul:
-      host: consul
-server:
-  port: 8080
-
