@@ -1,13 +1,10 @@
-#endpoints.health.enabled=true
-#endpoints.health.sensitive=false
-
 spring:
   application:
-    name: shopService # fixme: why does application.name not work???
+    name: shopService
   cloud:
     consul:
       discovery:
-        instanceid: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
         health-check-critical-timeout: 1m
       host: localhost

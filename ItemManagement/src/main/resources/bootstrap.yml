@@ -1,14 +1,14 @@
 spring:
   application:
-    name: itemManagement # fixme: why does application.name not work???
+    name: itemManagement
   cloud:
     consul:
 #      config:
 #        failFast: false
       discovery:
-        instanceid: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
-#        preferIpAdress: true
+        health-check-critical-timeout: 1m
       host: localhost
       port: 8500
 

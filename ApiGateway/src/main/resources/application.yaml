@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    items:
+      path: /api/items/**
+      serviceId: itemManagement
+    shops:
+      path: /api/shops/**
+      serviceId: shopService
