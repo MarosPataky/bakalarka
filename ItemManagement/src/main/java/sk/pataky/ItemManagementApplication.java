@@ -1,5 +1,7 @@
 package sk.pataky;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -24,6 +26,8 @@ import java.util.Date;
 @EnableDiscoveryClient
 @EnableScheduling
 public class ItemManagementApplication implements CommandLineRunner {
+
+	public static final Logger LOGGER = LoggerFactory.getLogger(ItemManagementApplication.class);
 
 	@Autowired
 	private ItemRepository itemRepository;
@@ -52,9 +56,10 @@ public class ItemManagementApplication implements CommandLineRunner {
 
 	}
 
-//	@Scheduled(fixedRate = 5000, initialDelay = 10000)
-	public void fetchItemsEverySecond() {
-		itemManagementClient.getAllItems();
+	@Scheduled(fixedRate = 2000, initialDelay = 1000)
+	public void fetchItemsEverySecond(){
+		LOGGER.info("Property1 value = {}", environment.getProperty("property1"));
+//			itemManagementClient.getAllItems();
 	}
 
 	private void createShoppingLists() {

@@ -8,7 +8,10 @@ spring:
         prefix: configuration
         fail-fast: false
         format: yaml
-#        default-context: all ## folder nae that all apps read
+        data-key: application.yaml
+        watch:
+          enabled: true
+        default-context: common ## folder nae that all apps read
       discovery:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true

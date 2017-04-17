@@ -5,6 +5,11 @@ services:
     image: consul:latest
     ports:
       - "8500:8500"
+  postgresql:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
   start_dependencies:
     image: dadarek/wait-for-dependencies
     depends_on:
@@ -53,7 +58,9 @@ services:
 
       
   
-    
+    # logging:
+    #   options:
+    #     max-size: 50m
   
 
 

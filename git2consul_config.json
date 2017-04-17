@@ -1,10 +1,10 @@
 {
   "version": "1.0",
   "repos" : [{
-    "include_branch_name" : false,
     "name" : "configuration",
-    "url" : "file://.git",
+    "url" : "file:///Users/macbook/Documents/workspace/bakalarka/.git",
     "source_root": "configs",
+    "include_branch_name" : false,
     "branches" : ["master"],
     "hooks": [{
       "type" : "polling",
