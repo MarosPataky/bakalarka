@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.pataky.client.ItemManagementClient;
+import sk.pataky.dto.CreateItemDto;
 import sk.pataky.dto.ItemDetailDto;
 import sk.pataky.dto.ItemDto;
 import sk.pataky.model.Item;
@@ -44,12 +45,24 @@ public class ItemController {
         return itemService.getDetail(id);
     }
 
+    @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
+    public void updateItem(@PathVariable("id") Long id,
+                           @RequestBody CreateItemDto createItemDto) {
+        itemService.updateItem(id, createItemDto);
+        // todo: return some meaningful response
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Long createItem(@RequestBody CreateItemDto createItemDto) {
+        return itemService.createItem(createItemDto);
+    }
+
 //    // this works!
 //    @RequestMapping(method = RequestMethod.GET)
-//    public ResponseEntity findAll(@RequestParam(value = "title", required = false) String title) {
+//    public ResponseEntity findAll(@RequestParam(value = "name", required = false) String name) {
 //
 //
-//        List<Item> items = itemRepository.findByTitleContainingIgnoreCase(title);
+//        List<Item> items = itemRepository.findByTitleContainingIgnoreCase(name);
 ////        item.getPrices().get(0).setItem(item);
 ////        ItemService.save(item);
 //        return new ResponseEntity(HttpStatus.CREATED);

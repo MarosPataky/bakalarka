@@ -3,6 +3,7 @@ package sk.pataky.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sk.pataky.dto.CreateItemDto;
 import sk.pataky.dto.ItemDetailDto;
 import sk.pataky.dto.ItemDto;
 import sk.pataky.model.Item;
@@ -28,10 +29,11 @@ public class ItemServiceImpl implements ItemService {
             ItemDto itemDto = new ItemDto();
 //            itemDto.description = item.getDescription();
             itemDto.lowestPrice = item.getPrices().get(0).getPrice(); // todo: null pointer
-            itemDto.title = item.getName();
+            itemDto.name = item.getName();
             itemDto.itemQuantityUnit = item.getItemQuantityUnit();
             itemDto.amount = item.getAmount();
             itemDto.brand = item.getBrand();
+            itemDto.id = item.getId();
 
             itemDtos.add(itemDto);
         }
@@ -44,22 +46,73 @@ public class ItemServiceImpl implements ItemService {
         Item item = itemRepository.findOne(id);
 
         if (item == null) {
+            // TODO: return NotFoundException!
             return null;
         }
 
         ItemDetailDto itemDetailDto = new ItemDetailDto();
-        itemDetailDto.prices = item.getPrices();
-        itemDetailDto.title = item.getName();
+//        itemDetailDto.prices = item.getPrices();
+        itemDetailDto.name = item.getName();
         itemDetailDto.description = item.getDescription();
         itemDetailDto.itemQuantityUnit = item.getItemQuantityUnit();
         itemDetailDto.amount = item.getAmount();
+        itemDetailDto.id = item.getId();
 
 
-        itemDetailDto.shopPriceMap = new HashMap<>();
+        itemDetailDto.prices = new HashMap<>();
         // tetsing only
         for (Price price : item.getPrices()) {
-            itemDetailDto.shopPriceMap.put(price.getShop(), price.getPrice());
+            itemDetailDto.prices.put(price.getShop(), price.getPrice());
         }
         return itemDetailDto;
+    }
+
+    @Override
+    public Long createItem(CreateItemDto createItemDto) {
+
+        Item item = new Item();
+        item.setName(createItemDto.name);
+        item.setBrand(createItemDto.brand);
+        item.setDescription(createItemDto.description);
+        item.setAmount(createItemDto.amount);
+        item.setItemQuantityUnit(createItemDto.itemQuantityUnit);
+
+        createItemDto.prices.forEach( (shop, price) -> {
+            Price priceEntity = new Price();
+            priceEntity.setPrice(price);
+            priceEntity.setShop(shop);
+            priceEntity.setItem(item);
+            item.getPrices().add(priceEntity);
+        });
+
+        itemRepository.save(item);
+        return item.getId();
+    }
+
+    @Override
+    public void updateItem(Long id, CreateItemDto createItemDto) {
+        Item item = itemRepository.findOne(id);
+
+        if (item == null) {
+            // TODO: throw NotFoundException!
+            return;
+        }
+
+        item.setName(createItemDto.name);
+        item.setBrand(createItemDto.brand);
+        item.setDescription(createItemDto.description);
+        item.setAmount(createItemDto.amount);
+        item.setItemQuantityUnit(createItemDto.itemQuantityUnit);
+
+        item.getPrices().clear();
+        createItemDto.prices.forEach( (shop, price) -> {
+            Price priceEntity = new Price();
+            priceEntity.setPrice(price);
+            priceEntity.setShop(shop);
+            priceEntity.setItem(item);
+            item.getPrices().add(priceEntity);
+        });
+
+        itemRepository.save(item);
     }
 }

@@ -12,7 +12,6 @@ public class Price extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ITEM_ID")
-    @JsonIgnore // fixme: quick fix for cyclic reference during jackson marshalling!
     private Item item;
 
     public String getShop() {

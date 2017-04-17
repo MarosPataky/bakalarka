@@ -4,26 +4,53 @@ spring:
   cloud:
     consul:
       config:
-        enabled: true
+        enabled: false
         prefix: configuration
-        fail-fast: false
         format: yaml
         data-key: application.yaml
         watch:
           enabled: true
-        default-context: common ## folder nae that all apps read
+        ## folder name that all apps read
+        default-context: common
       discovery:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
         health-check-critical-timeout: 1m
+        enabled: false
+        ## do not fail if consul is not available
       host: localhost
       port: 8500
-
-
 endpoints:
   health:
     enabled: true
     sensitive: false
+
+#spring:
+#  application:
+#    name: itemManagement
+#  cloud:
+#    consul:
+#      config:
+#        enabled: true
+#        prefix: configuration
+#        format: yaml
+#        data-key: application.yaml
+#        watch:
+#          enabled: true
+#        default-context: common ## folder nae that all apps read
+#      discovery:
+#        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#        prefer-ip-address: true
+#        health-check-critical-timeout: 1m
+#        ## do not fail if consul is not available
+#      host: localhost
+#      port: 8500
+#
+#
+#endpoints:
+#  health:
+#    enabled: true
+#    sensitive: false
 
 
 ---

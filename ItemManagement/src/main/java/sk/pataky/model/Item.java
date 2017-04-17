@@ -11,16 +11,21 @@ public class Item extends BaseEntity {
 
     private String brand;
 
-    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Price> prices;
-//    private String image; // todo: figure this out
 
+//    private String image; // todo: add later
+
+    // todo: split description into multiple fields - description, storage, warnings, preparation, country of origin
     private String description;
 
+    // amount in pieces / grams / milliliters
     public Long amount;
 
     @Enumerated(EnumType.STRING)
     public ItemQuantityUnit itemQuantityUnit;
+
+    //TODO: tags
 
     public String getName() {
         return name;

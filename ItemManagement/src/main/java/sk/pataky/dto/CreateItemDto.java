@@ -2,18 +2,22 @@ package sk.pataky.dto;
 
 import sk.pataky.model.ItemQuantityUnit;
 
-public class ItemDto {
+import java.util.Map;
 
-    public Long id;
+/**
+ *
+ */
+public class CreateItemDto {
 
     public String name;
 
     public String brand;
 
-    public Long lowestPrice;
+    public Map<String, Long> prices;
 
     public Long amount;
 
     public ItemQuantityUnit itemQuantityUnit;
 
+    public String description;
 }

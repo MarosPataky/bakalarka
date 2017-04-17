@@ -3,7 +3,7 @@ package sk.pataky.model;
 public enum ItemQuantityUnit {
 
     GRAMS("grams"),
-    LITRES("litres"),
+    MILLILITRES("millilitres"),
     PIECES("pieces");
 
 

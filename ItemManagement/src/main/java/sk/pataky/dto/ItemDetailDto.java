@@ -8,15 +8,17 @@ import java.util.Map;
 
 public class ItemDetailDto {
 
-    public String title;
+    public Long id;
 
-    public List<Price> prices;
+    public String name;
 
-    public Map<String, Long> shopPriceMap;
+    public Map<String, Long> prices;
 
     public String description;
 
     public Long amount;
 
     public ItemQuantityUnit itemQuantityUnit;
+
+    // todo: nutrition
 }
