@@ -1,27 +1,45 @@
 package sk.pataky.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+@Document(collection = "stores")
+public class Store {
 
-public class Store extends BaseEntity{
+    @Id
+    private String id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "BRAND_ID")
-    @JsonIgnore // fixme: quick fix for cyclic reference during jackson marshalling!
-    private Brand brand;
+    private String brand;
 
-    public Store(Brand brand) {
-        this.brand = brand;
+    private GeoJsonPoint location;
+
+//    private Brand brand;
+
+
+    public String getId() {
+        return id;
     }
 
-    public Brand getBrand() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(Brand brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    public GeoJsonPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(GeoJsonPoint location) {
+        this.location = location;
+    }
+
+
 }

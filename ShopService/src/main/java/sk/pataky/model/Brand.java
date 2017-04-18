@@ -1,14 +1,10 @@
 package sk.pataky.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import java.util.List;
 
-public class Brand extends BaseEntity {
+public class Brand {
     private String name;
 
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Store> stores;
 
     public String getName() {
