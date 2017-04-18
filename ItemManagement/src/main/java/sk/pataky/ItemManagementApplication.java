@@ -56,7 +56,7 @@ public class ItemManagementApplication implements CommandLineRunner {
 
 	}
 
-//	@Scheduled(fixedRate = 2000, initialDelay = 1000)
+	@Scheduled(fixedRate = 2000, initialDelay = 1000)
 	public void fetchItemsEverySecond(){
 		LOGGER.info("Property1 value = {}", environment.getProperty("property1"));
 //			itemManagementClient.getAllItems();

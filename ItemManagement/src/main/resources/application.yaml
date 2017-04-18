@@ -1,3 +1,6 @@
 ### empty for now
+---
+spring:
+  profiles: default
 server:
-  port: 9000
+  port: 8090

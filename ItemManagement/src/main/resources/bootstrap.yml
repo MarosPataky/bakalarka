@@ -4,19 +4,21 @@ spring:
   cloud:
     consul:
       config:
-        enabled: false
+        enabled: true
         prefix: configuration
         format: yaml
-        data-key: application.yaml
+        data-key: application.yml
         watch:
           enabled: true
         ## folder name that all apps read
         default-context: common
+        fail-fast: true
       discovery:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
         health-check-critical-timeout: 1m
-        enabled: false
+        enabled: true
+        fail-fast: true
         ## do not fail if consul is not available
       host: localhost
       port: 8500
@@ -24,6 +26,28 @@ endpoints:
   health:
     enabled: true
     sensitive: false
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul
+server:
+  port: 8080
+---
+spring:
+  profiles: default
+  cloud:
+    consul:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+
+
+
 
 #spring:
 #  application:
@@ -53,12 +77,4 @@ endpoints:
 #    sensitive: false
 
 
----
-spring:
-  profiles: docker
-  cloud:
-    consul:
-      host: consul
-server:
-  port: 8080
 
