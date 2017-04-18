@@ -1,21 +1,19 @@
-#endpoints.health.enabled=true
-#endpoints.health.sensitive=false
-#
-#
-#spring.cloud.consul.discovery.instanceId=${spring.application.name}:${spring.application.instance_id:${random.value}}
-#spring.cloud.consul.discovery.preferIpAddress=true
-##spring.cloud.consul.host=consul
-#spring.cloud.consul.host=localhost
-#spring.cloud.consul.port=8500
-
-
+---
 spring:
+  profiles: default
   data:
     mongodb:
       database: testingDb
-  cloud:
-    consul:
-      discovery:
-        enabled: false
+server:
+  port: 8080
+
+
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      database: testingDb
+      host: mongo
 server:
   port: 8080

@@ -4,3 +4,12 @@ spring:
   profiles: default
 server:
   port: 8090
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul
+server:
+  port: 8080

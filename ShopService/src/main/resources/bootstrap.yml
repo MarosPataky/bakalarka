@@ -3,16 +3,25 @@ spring:
     name: shopService
   cloud:
     consul:
-      enabled: false
+      config:
+        enabled: true
+        prefix: configuration
+        format: yaml
+        data-key: application.yml
+        watch:
+          enabled: true
+        ## folder name that all apps read
+        default-context: common
+        fail-fast: true
       discovery:
-        enabled: false
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
         health-check-critical-timeout: 1m
+        enabled: true
+        fail-fast: true
+        ## do not fail if consul is not available
       host: localhost
       port: 8500
-
-
 endpoints:
   health:
     enabled: true
@@ -24,5 +33,26 @@ spring:
   cloud:
     consul:
       host: consul
-server:
-  port: 8080
+---
+spring:
+  profiles: default
+  cloud:
+    consul:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+
+---
+spring:
+  profiles: local-consul
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        fail-fast: true
+      discovery:
+        enabled: true
+        fail-fast: true

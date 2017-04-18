@@ -33,8 +33,6 @@ spring:
   cloud:
     consul:
       host: consul
-server:
-  port: 8080
 ---
 spring:
   profiles: default
@@ -45,36 +43,16 @@ spring:
         enabled: false
       discovery:
         enabled: false
-
-
-
-
-#spring:
-#  application:
-#    name: itemManagement
-#  cloud:
-#    consul:
-#      config:
-#        enabled: true
-#        prefix: configuration
-#        format: yaml
-#        data-key: application.yaml
-#        watch:
-#          enabled: true
-#        default-context: common ## folder nae that all apps read
-#      discovery:
-#        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-#        prefer-ip-address: true
-#        health-check-critical-timeout: 1m
-#        ## do not fail if consul is not available
-#      host: localhost
-#      port: 8500
-#
-#
-#endpoints:
-#  health:
-#    enabled: true
-#    sensitive: false
-
-
+---
+spring:
+  profiles: local-consul
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        fail-fast: true
+      discovery:
+        enabled: true
+        fail-fast: true
 
