@@ -26,7 +26,7 @@ public class ShoppingListController {
     private ShoppingListService shoppingListService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public Long createShoppingList(@RequestBody CreateShoppingListDto createShoppingListDto) {
+    public String createShoppingList(@RequestBody CreateShoppingListDto createShoppingListDto) {
         return shoppingListService.createShoppingList(createShoppingListDto);
     }
 
@@ -36,7 +36,7 @@ public class ShoppingListController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
-    public void updateShoppingList(@PathVariable() Long id,
+    public void updateShoppingList(@PathVariable() String id,
                                                     @RequestBody CreateShoppingListDto createShoppingListDto) {
         // TODO: 21/04/2017 replace with updateShoppingListDto + add PATCH operation (optional)
         shoppingListService.updateShoppingList(id, createShoppingListDto);

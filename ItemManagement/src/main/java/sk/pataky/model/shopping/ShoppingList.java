@@ -1,32 +1,31 @@
 package sk.pataky.model.shopping;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import sk.pataky.model.BaseEntity;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@Document(collection = "shoppingLists")
 public class ShoppingList extends BaseEntity {
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ShoppingListEntry> items;
+    private List<ShoppingListEntry> entires;
 
     private Date createdOn;
 
     public ShoppingList() {
     }
 
-    public List<ShoppingListEntry> getItems() {
-        if (items == null) {
-            items = new ArrayList<>();
+    public List<ShoppingListEntry> getEntires() {
+        if (entires == null) {
+            entires = new ArrayList<>();
         }
-        return items;
+        return entires;
     }
 
-    public void setItems(List<ShoppingListEntry> items) {
-        this.items = items;
+    public void setEntires(List<ShoppingListEntry> entires) {
+        this.entires = entires;
     }
 
     public Date getCreatedOn() {

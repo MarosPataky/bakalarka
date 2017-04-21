@@ -5,6 +5,6 @@ package sk.pataky.dto.shopping;
  */
 public class ShoppingListItemDto {
 
-    public Long id;
+    public String id;
     public Long quantity;
 }

@@ -41,7 +41,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public ItemDetailDto getDetail(Long id) {
+    public ItemDetailDto getDetail(String id) {
 
         Item item = itemRepository.findOne(id);
 
@@ -68,7 +68,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Long createItem(CreateItemDto createItemDto) {
+    public String createItem(CreateItemDto createItemDto) {
 
         Item item = new Item();
         item.setName(createItemDto.name);
@@ -81,7 +81,6 @@ public class ItemServiceImpl implements ItemService {
             Price priceEntity = new Price();
             priceEntity.setPrice(price);
             priceEntity.setShop(shop);
-            priceEntity.setItem(item);
             item.getPrices().add(priceEntity);
         });
 
@@ -90,7 +89,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void updateItem(Long id, CreateItemDto createItemDto) {
+    public void updateItem(String id, CreateItemDto createItemDto) {
         Item item = itemRepository.findOne(id);
 
         if (item == null) {
@@ -109,7 +108,6 @@ public class ItemServiceImpl implements ItemService {
             Price priceEntity = new Price();
             priceEntity.setPrice(price);
             priceEntity.setShop(shop);
-            priceEntity.setItem(item);
             item.getPrices().add(priceEntity);
         });
 

@@ -48,8 +48,8 @@ public class ItemManagementApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 
-		createItems();
-		createShoppingLists();
+//		createItems();
+//		createShoppingLists();
 
 		shoppingListRepository.findAll();
 
@@ -66,10 +66,10 @@ public class ItemManagementApplication implements CommandLineRunner {
 		ShoppingList shoppingList = new ShoppingList();
 		shoppingList.setCreatedOn(new Date());
 
-		for (int i = 1; i< 4; i++) {
-			ShoppingListEntry entry = new ShoppingListEntry(itemRepository.findOne(1L), (long) i, new Date());
-			shoppingList.getItems().add(entry);
-		}
+//		for (int i = 1; i< 4; i++) {
+//			ShoppingListEntry entry = new ShoppingListEntry(itemRepository.findOne(), (long) i, new Date());
+//			shoppingList.getEntires().add(entry);
+//		}
 
 		shoppingListRepository.save(shoppingList);
 	}
@@ -84,7 +84,6 @@ public class ItemManagementApplication implements CommandLineRunner {
 			item.setAmount(500L);
 
 			Price price = new Price();
-			price.setItem(item);
 			price.setShop("Tesco");
 			price.setPrice(199L);
 

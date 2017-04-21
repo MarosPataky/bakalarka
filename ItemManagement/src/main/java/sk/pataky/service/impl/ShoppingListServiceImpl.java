@@ -10,7 +10,6 @@ import sk.pataky.model.shopping.ShoppingList;
 import sk.pataky.model.shopping.ShoppingListEntry;
 import sk.pataky.repository.ItemRepository;
 import sk.pataky.repository.shopping.ShoppingListRepository;
-import sk.pataky.service.ItemService;
 import sk.pataky.service.ShoppingListService;
 
 import java.util.ArrayList;
@@ -30,11 +29,11 @@ public class ShoppingListServiceImpl implements ShoppingListService {
     private ItemRepository itemRepository; // // FIXME: 20/04/2017 use service here or rather change the model!
 
     @Override
-    public Long createShoppingList(CreateShoppingListDto createShoppingListDto) {
+    public String createShoppingList(CreateShoppingListDto createShoppingListDto) {
         ShoppingList shoppingList = new ShoppingList();
 
         shoppingList.setCreatedOn(new Date());
-        List<ShoppingListEntry> shoppingListEntries = shoppingList.getItems();
+        List<ShoppingListEntry> shoppingListEntries = shoppingList.getEntires();
 
         createShoppingListDto.items.forEach(dto -> {
             // TODO: refactor for one select for all items
@@ -64,10 +63,10 @@ public class ShoppingListServiceImpl implements ShoppingListService {
 
         shoppingListRepository.findAll().forEach(shoppingList -> {
             ShoppingListDto dto = new ShoppingListDto();
-            shoppingList.getItems().forEach(item -> {
+            shoppingList.getEntires().forEach(entry -> {
                 ShoppingListItemDto shoppingListItemDto = new ShoppingListItemDto();
-                shoppingListItemDto.id = item.getId();
-                shoppingListItemDto.quantity = item.getQuantity();
+                shoppingListItemDto.id = entry.getItem().getId();
+                shoppingListItemDto.quantity = entry.getQuantity();
                 dto.items.add(shoppingListItemDto);
             });
 
@@ -81,7 +80,7 @@ public class ShoppingListServiceImpl implements ShoppingListService {
     }
 
     @Override
-    public void updateShoppingList(Long id, CreateShoppingListDto createShoppingListDto) {
+    public void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto) {
 
         ShoppingList shoppingList = shoppingListRepository.findOne(id);
 
@@ -89,8 +88,8 @@ public class ShoppingListServiceImpl implements ShoppingListService {
             return; // TODO: 21/04/2017 return not found exception
         }
 
-        List<ShoppingListEntry> shoppingListEntries = shoppingList.getItems();
-        shoppingList.getItems().clear();
+        List<ShoppingListEntry> shoppingListEntries = shoppingList.getEntires();
+        shoppingList.getEntires().clear();
 
         createShoppingListDto.items.forEach(dto -> {
             // TODO: refactor for one select for all items

@@ -3,15 +3,10 @@ package sk.pataky.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sk.pataky.client.ItemManagementClient;
 import sk.pataky.dto.CreateItemDto;
 import sk.pataky.dto.ItemDetailDto;
 import sk.pataky.dto.ItemDto;
-import sk.pataky.model.Item;
-import sk.pataky.repository.ItemRepository;
 import sk.pataky.service.ItemService;
 
 import java.util.List;
@@ -41,19 +36,19 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public ItemDetailDto getDetail(@PathVariable("id") Long id) {
+    public ItemDetailDto getDetail(@PathVariable("id") String id) {
         return itemService.getDetail(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
-    public void updateItem(@PathVariable("id") Long id,
+    public void updateItem(@PathVariable("id") String id,
                            @RequestBody CreateItemDto createItemDto) {
         itemService.updateItem(id, createItemDto);
         // todo: return some meaningful response
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Long createItem(@RequestBody CreateItemDto createItemDto) {
+    public String createItem(@RequestBody CreateItemDto createItemDto) {
         return itemService.createItem(createItemDto);
     }
 

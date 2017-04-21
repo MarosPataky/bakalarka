@@ -9,9 +9,9 @@ import java.util.List;
 public interface ItemService {
 
     List<ItemDto> getAll();
-    ItemDetailDto getDetail(Long id);
+    ItemDetailDto getDetail(String id);
 
-    Long createItem(CreateItemDto createItemDto);
+    String createItem(CreateItemDto createItemDto);
 
-    void updateItem(Long id, CreateItemDto createItemDto);
+    void updateItem(String id, CreateItemDto createItemDto);
 }

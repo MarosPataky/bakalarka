@@ -1,17 +1,18 @@
 package sk.pataky.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Document(collection = "items")
 public class Item extends BaseEntity {
 
     private String name;
 
     private String brand;
 
-    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Price> prices;
 
 //    private String image; // todo: add later
@@ -22,7 +23,6 @@ public class Item extends BaseEntity {
     // amount in pieces / grams / milliliters
     public Long amount;
 
-    @Enumerated(EnumType.STRING)
     public ItemQuantityUnit itemQuantityUnit;
 
     //TODO: tags

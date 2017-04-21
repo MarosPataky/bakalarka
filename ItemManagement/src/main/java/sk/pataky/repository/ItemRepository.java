@@ -1,9 +1,6 @@
 package sk.pataky.repository;
 
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import sk.pataky.model.Item;
 
@@ -14,6 +11,6 @@ import java.util.List;
  */
 
 @Repository
-public interface ItemRepository extends PagingAndSortingRepository<Item, Long> {
+public interface ItemRepository extends MongoRepository<Item, String> {
     List<Item> findByNameContainingIgnoreCase(String name);
 }

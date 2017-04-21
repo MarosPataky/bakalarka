@@ -1,18 +1,24 @@
 ### empty for now
+spring:
+  jackson:
+      serialization:
+        write-dates-as-timestamps: false
 ---
 spring:
   profiles: default
-  jackson:
-    serialization:
-      write-dates-as-timestamps: false
+  data:
+      mongodb:
+        database: itemDb
 server:
   port: 8080
 
 ---
 spring:
   profiles: docker
-  cloud:
-    consul:
-      host: consul
+  data:
+    mongodb:
+      database: itemDb
+      host: mongo
 server:
   port: 8080
+

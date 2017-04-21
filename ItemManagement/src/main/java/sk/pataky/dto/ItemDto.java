@@ -4,7 +4,7 @@ import sk.pataky.model.ItemQuantityUnit;
 
 public class ItemDto {
 
-    public Long id;
+    public String id;
 
     public String name;
 

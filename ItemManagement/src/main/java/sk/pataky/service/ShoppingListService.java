@@ -9,9 +9,9 @@ import java.util.List;
  *
  */
 public interface ShoppingListService {
-    Long createShoppingList(CreateShoppingListDto createShoppingListDto);
+    String createShoppingList(CreateShoppingListDto createShoppingListDto);
 
     List<ShoppingListDto> findAll();
 
-    void updateShoppingList(Long id, CreateShoppingListDto createShoppingListDto);
+    void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto);
 }

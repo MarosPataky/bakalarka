@@ -1,7 +1,7 @@
 zuul:
   routes:
-    items:
-      path: /api/items/**
+    entires:
+      path: /api/entires/**
       serviceId: itemManagement
     shops:
       path: /api/shops/**
