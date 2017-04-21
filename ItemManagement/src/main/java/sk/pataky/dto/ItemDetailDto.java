@@ -18,5 +18,7 @@ public class ItemDetailDto {
 
     public ItemQuantityUnit itemQuantityUnit;
 
+    public String imageId;
+
     // todo: nutrition
 }

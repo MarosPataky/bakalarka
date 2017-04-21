@@ -1,8 +1,14 @@
 package sk.pataky.service.impl;
 
 
+import com.mongodb.gridfs.GridFSDBFile;
+import com.mongodb.gridfs.GridFSFile;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import sk.pataky.dto.CreateItemDto;
 import sk.pataky.dto.ItemDetailDto;
 import sk.pataky.dto.ItemDto;
@@ -11,6 +17,7 @@ import sk.pataky.model.Price;
 import sk.pataky.repository.ItemRepository;
 import sk.pataky.service.ItemService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +27,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemRepository itemRepository;
+
+    @Autowired
+    private GridFsTemplate gridFsTemplate;
 
     @Override
     public List<ItemDto> getAll() {
@@ -34,6 +44,7 @@ public class ItemServiceImpl implements ItemService {
             itemDto.amount = item.getAmount();
             itemDto.brand = item.getBrand();
             itemDto.id = item.getId();
+            itemDto.imageId = item.getImage();
 
             itemDtos.add(itemDto);
         }
@@ -57,6 +68,7 @@ public class ItemServiceImpl implements ItemService {
         itemDetailDto.itemQuantityUnit = item.getItemQuantityUnit();
         itemDetailDto.amount = item.getAmount();
         itemDetailDto.id = item.getId();
+        itemDetailDto.imageId = item.getImage();
 
 
         itemDetailDto.prices = new HashMap<>();
@@ -77,7 +89,7 @@ public class ItemServiceImpl implements ItemService {
         item.setAmount(createItemDto.amount);
         item.setItemQuantityUnit(createItemDto.itemQuantityUnit);
 
-        createItemDto.prices.forEach( (shop, price) -> {
+        createItemDto.prices.forEach((shop, price) -> {
             Price priceEntity = new Price();
             priceEntity.setPrice(price);
             priceEntity.setShop(shop);
@@ -104,7 +116,7 @@ public class ItemServiceImpl implements ItemService {
         item.setItemQuantityUnit(createItemDto.itemQuantityUnit);
 
         item.getPrices().clear();
-        createItemDto.prices.forEach( (shop, price) -> {
+        createItemDto.prices.forEach((shop, price) -> {
             Price priceEntity = new Price();
             priceEntity.setPrice(price);
             priceEntity.setShop(shop);
@@ -112,5 +124,34 @@ public class ItemServiceImpl implements ItemService {
         });
 
         itemRepository.save(item);
+    }
+
+    @Override
+    public String saveImageForItem(String id, MultipartFile file) throws IOException {
+        Item item = itemRepository.findOne(id);
+
+        if (item == null) {
+            return null; // TODO: not found expcetion
+        }
+
+        GridFSFile gridFSFile = gridFsTemplate.store(file.getInputStream(), file.getName());
+
+        item.setImage(gridFSFile.getId().toString());
+        itemRepository.save(item);
+
+        return gridFSFile.getId().toString();
+    }
+
+    @Override
+    public GridFSDBFile getImageForItem(String id) {
+        Item item = itemRepository.findOne(id);
+
+        if (item == null) {
+            return null; // TODO: not found expcetion
+        }
+
+        GridFSDBFile image = gridFsTemplate.findOne(new Query(Criteria.where("_id").is(item.getImage())));
+
+        return image;
     }
 }

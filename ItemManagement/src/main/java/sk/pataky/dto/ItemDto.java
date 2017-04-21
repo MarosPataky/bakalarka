@@ -16,4 +16,6 @@ public class ItemDto {
 
     public ItemQuantityUnit itemQuantityUnit;
 
+    public String imageId;
+
 }

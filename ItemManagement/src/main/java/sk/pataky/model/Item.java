@@ -15,7 +15,8 @@ public class Item extends BaseEntity {
 
     private List<Price> prices;
 
-//    private String image; // todo: add later
+    // This should contain ID of image saved via GridFS
+    private String image; // todo: add later
 
     // todo: split description into multiple fields - description, storage, warnings, preparation, country of origin
     private String description;
@@ -76,5 +77,13 @@ public class Item extends BaseEntity {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
