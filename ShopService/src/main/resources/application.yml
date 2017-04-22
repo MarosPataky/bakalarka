@@ -4,6 +4,10 @@ spring:
   data:
     mongodb:
       database: testingDb
+
+zipkin:
+    baseUrl: http://localhost:9411
+
 server:
   port: 8080
 
@@ -15,5 +19,7 @@ spring:
     mongodb:
       database: testingDb
       host: mongo
+  zipkin:
+      baseUrl: http://zipkin:9411
 server:
   port: 8080

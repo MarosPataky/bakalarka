@@ -6,3 +6,9 @@ zuul:
     shops:
       path: /api/shops/**
       serviceId: shopService
+      
+      
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+ribbon:
+  connect-timeout: 5000
+  read-timeout: 10000

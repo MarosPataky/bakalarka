@@ -1,6 +1,7 @@
 package sk.pataky.client;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,10 @@ public class ItemServiceBean {
     @Autowired
     private ItemServiceClient itemServiceClient;
 
-    @HystrixCommand(fallbackMethod = "defaultItems")
+    @HystrixCommand(fallbackMethod = "defaultItems",
+            commandProperties = {
+                    @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
+            })
     public List<ItemDto> getItems(String brand) {
         return itemServiceClient.getItemsForBrand(brand);
     }
