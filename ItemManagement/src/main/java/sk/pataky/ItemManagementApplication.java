@@ -48,6 +48,8 @@ public class ItemManagementApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 
+		LOGGER.info("Test logging message!");
+
 //		createItems();
 //		createShoppingLists();
 
