@@ -1,0 +1,37 @@
+### empty for now
+spring:
+  data:
+      mongodb:
+        database: itemDb
+  jackson:
+        serialization:
+          write-dates-as-timestamps: false
+  cloud:
+    consul:
+      discovery:
+              instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+              prefer-ip-address: true
+              health-check-critical-timeout: 1m
+              enabled: true
+              fail-fast: true
+              ## do not fail if consul is not available
+    zipkin:
+      baseUrl: http://localhost:9411
+  #    locator:
+  #      discovery:
+  #        enabled:
+server:
+  port: 9100
+
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      database: itemDb
+      host: mongo
+  zipkin:
+      baseUrl: http://zipkin:9411
+server:
+  port: 8080
+

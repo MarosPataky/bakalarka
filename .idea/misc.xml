@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/ShopService/pom.xml" />
         <option value="$PROJECT_DIR$/ZuulProxy/pom.xml" />
         <option value="$PROJECT_DIR$/ApiGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ServiceTemplate/pom.xml" />
       </list>
     </option>
   </component>
