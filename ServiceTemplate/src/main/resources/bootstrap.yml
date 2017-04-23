@@ -13,7 +13,6 @@ spring:
         ## folder name that all apps read
         default-context: common
         fail-fast: true
-        profile-separator: '::'
       host: localhost
       port: 8500
 
