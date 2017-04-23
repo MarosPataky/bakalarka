@@ -13,12 +13,10 @@ spring:
         ## folder name that all apps read
         default-context: common
         fail-fast: true
+        profile-separator: '::'
       host: localhost
       port: 8500
-endpoints:
-  health:
-    enabled: true
-    sensitive: false
+
 
 ---
 spring:
@@ -26,16 +24,16 @@ spring:
   cloud:
     consul:
       host: consul
----
-spring:
-  profiles: default
-  cloud:
-    consul:
-      enabled: false
-      config:
-        enabled: false
-      discovery:
-        enabled: false
+#---
+#spring:
+#  profiles: default
+#  cloud:
+#    consul:
+#      enabled: false
+#      config:
+#        enabled: false
+#      discovery:
+#        enabled: false
 ---
 spring:
   profiles: local-consul

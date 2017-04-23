@@ -1,0 +1,19 @@
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+
+spring:
+  jackson:
+        serialization:
+          write-dates-as-timestamps: false
+  cloud:
+      consul:
+        discovery:
+                instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+                prefer-ip-address: true
+                health-check-critical-timeout: 1m
+                enabled: true
+                fail-fast: true
+
+

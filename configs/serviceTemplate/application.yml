@@ -23,8 +23,6 @@ spring:
 server:
   port: 9100
 
-aaaa: bbbb
-
 
 ---
 spring:
