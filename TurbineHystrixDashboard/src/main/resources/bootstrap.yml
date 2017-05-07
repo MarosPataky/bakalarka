@@ -2,7 +2,7 @@ server:
   port: 8079
 spring:
   application:
-    name: hystrixDashboard
+    name: turbineHystrixDashboard
   cloud:
       consul:
         discovery:

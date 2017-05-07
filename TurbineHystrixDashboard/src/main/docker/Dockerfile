@@ -1,6 +1,6 @@
 FROM java:8
 VOLUME /tmp
-ADD hystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
+ADD turbinehystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS=""

@@ -1,11 +1,13 @@
 zuul:
   routes:
-    entires:
-      path: /api/entires/**
+    items:
+      path: /api/items/**
       serviceId: itemManagementService
+      stripPrefix: true
     shops:
       path: /api/shops/**
       serviceId: shopService
+      stripPrefix: true
       
       
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

@@ -34,9 +34,9 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8080:8080"
-  itemmanagement:
+  itemmanagementservice:
     # build: ./ItemManagement
-    image: bakalarka/itemmanagement
+    image: bakalarka/itemmanagementservice
     depends_on:
       - start_dependencies
     environment:
@@ -55,8 +55,8 @@ services:
     # ports:
     #   - "8082:8080"
 
-  hystrixdashboard:
-    image: bakalarka/hystrixdashboard
+  turbinehystrixdashboard:
+    image: bakalarka/turbinehystrixdashboard
     depends_on:
       - start_dependencies
     environment:
