@@ -26,7 +26,9 @@
         <module name="hystrixdashboard" />
         <module name="itemmanagement" />
         <module name="itemmanagement (1)" />
+        <module name="ItemManagementService" />
         <module name="shopservice" />
+        <module name="TurbineHystrixDashboard" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,7 +36,9 @@
       <module name="hystrixdashboard" target="1.8" />
       <module name="itemmanagement" target="1.8" />
       <module name="itemmanagement (1)" target="1.8" />
+      <module name="ItemManagementService" target="1.8" />
       <module name="shopservice" target="1.8" />
+      <module name="TurbineHystrixDashboard" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

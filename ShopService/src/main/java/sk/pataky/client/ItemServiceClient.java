@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  */
-@FeignClient("itemmanagement")
+@FeignClient("itemManagementService")
 public interface ItemServiceClient {
 
         @RequestMapping(method = RequestMethod.GET, value="/items")

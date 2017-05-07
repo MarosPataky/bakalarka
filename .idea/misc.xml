@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/ZuulProxy/pom.xml" />
         <option value="$PROJECT_DIR$/ApiGateway/pom.xml" />
         <option value="$PROJECT_DIR$/ServiceTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/ItemManagementService/pom.xml" />
+        <option value="$PROJECT_DIR$/TurbineHystrixDashboard/pom.xml" />
       </list>
     </option>
   </component>

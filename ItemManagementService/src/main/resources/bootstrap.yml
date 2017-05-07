@@ -1,6 +1,6 @@
 spring:
   application:
-    name: itemManagement
+    name: itemManagementService
   cloud:
     consul:
       config:
@@ -13,20 +13,9 @@ spring:
         ## folder name that all apps read
         default-context: common
         fail-fast: true
-      discovery:
-        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-        prefer-ip-address: true
-        health-check-critical-timeout: 1m
-        enabled: true
-        fail-fast: true
         ## do not fail if consul is not available
       host: localhost
       port: 8500
-endpoints:
-  health:
-    enabled: true
-    sensitive: false
-
 ---
 spring:
   profiles: docker

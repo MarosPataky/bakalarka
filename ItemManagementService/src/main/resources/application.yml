@@ -1,3 +1,5 @@
+## this file contains properties that are used when configuration is not read from consul
+
 server:
   port: 8080
 
@@ -12,7 +14,7 @@ spring:
         fail-fast: true
   data:
     mongodb:
-      database: shopDb
+      database: itemDb
   jackson:
         serialization:
           write-dates-as-timestamps: false
