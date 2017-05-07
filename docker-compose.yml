@@ -63,7 +63,12 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8079:8080"
-
+  servicetemplate:
+    image: bakalarka/servicetemplate
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
       
   
