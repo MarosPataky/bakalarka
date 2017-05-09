@@ -21,13 +21,13 @@ public class SomeResource {
 
     @GetMapping
     @PreAuthorize("hasAuthority('FOO_READ')")
-    public String readFoo(@AuthenticationPrincipal User user, Principal user2) {
+    public String readFoo(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         return "read foo " + UUID.randomUUID().toString();
     }
 
     @PostMapping
     @PreAuthorize("hasAuthority('FOO_WRITE')")
-    public String writeFoo(@AuthenticationPrincipal User user) {
+    public String writeFoo(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         return "write foo " + UUID.randomUUID().toString();
     }
 }
