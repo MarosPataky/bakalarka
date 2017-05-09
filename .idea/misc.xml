@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/ServiceTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/ItemManagementService/pom.xml" />
         <option value="$PROJECT_DIR$/TurbineHystrixDashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/AuthorizationServer/pom.xml" />
       </list>
     </option>
   </component>
