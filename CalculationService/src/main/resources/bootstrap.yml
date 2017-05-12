@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: calculationService
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: configuration
+        format: yaml
+        data-key: application.yml
+        watch:
+          enabled: true
+        ## folder name that all apps read
+        default-context: common
+        fail-fast: true
+      host: localhost
+      port: 8500
+
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul
+---
+spring:
+  profiles: default
+  cloud:
+    consul:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+---
+spring:
+  profiles: local-consul
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        fail-fast: true
+      discovery:
+        enabled: true
+        fail-fast: true
+

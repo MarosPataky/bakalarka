@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/AuthorizationServer/authorizationserver.iml" filepath="$PROJECT_DIR$/AuthorizationServer/authorizationserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bakalarka.iml" filepath="$PROJECT_DIR$/.idea/bakalarka.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServiceTemplate/itemmanagement (1).iml" filepath="$PROJECT_DIR$/ServiceTemplate/itemmanagement (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/CalculationService/servicetemplate.iml" filepath="$PROJECT_DIR$/CalculationService/servicetemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShopService/shopservice.iml" filepath="$PROJECT_DIR$/ShopService/shopservice.iml" />
     </modules>
   </component>
