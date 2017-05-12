@@ -1,5 +1,5 @@
 turbine:
-  appConfig: apigateway,shopservice,itemmanagementservice
+  appConfig: apigateway,shopservice,itemmanagementservice,calculationservice
 #  aggregator: ## either use aggregator.clusterconfig with listed services (turbine stream per service (multiple instances), or use clusterNameExpression(one turbine stream for all services)
 #    clusterConfig: apigateway,shopservice
   clusterNameExpression: "'default'"

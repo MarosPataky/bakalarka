@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/TurbineHystrixDashboard/pom.xml" />
         <option value="$PROJECT_DIR$/AuthorizationServer/pom.xml" />
         <option value="$PROJECT_DIR$/CalculationService/pom.xml" />
+        <option value="$PROJECT_DIR$/ShippingService/pom.xml" />
       </list>
     </option>
   </component>

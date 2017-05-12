@@ -62,6 +62,14 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "9001:8080"
+  shippingservice:
+    image: bakalarka/shippingservice
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "9002:8080"
 
   turbinehystrixdashboard:
     image: bakalarka/turbinehystrixdashboard

@@ -13,16 +13,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 @FeignClient(
-  name = "itemManagementService",
+        name = "itemManagementService",
         path = "/items",
-  fallback = ItemServiceClient.ItemServiceFallback.class
+        fallback = ItemServiceClient.ItemServiceFallback.class
 )
 public interface ItemServiceClient {
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     ItemDetailDto getDetail(@PathVariable("id") String id);
-     
+
     @Component
     class ItemServiceFallback implements ItemServiceClient {
 
