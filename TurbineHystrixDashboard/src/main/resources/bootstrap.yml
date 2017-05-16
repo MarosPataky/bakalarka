@@ -1,14 +1,18 @@
-server:
-  port: 8079
 spring:
   application:
     name: turbineHystrixDashboard
   cloud:
       consul:
-        discovery:
-          instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-          health-check-critical-timeout: 1m
-          prefer-ip-address: true
+        config:
+          enabled: true
+          prefix: configuration
+          format: yaml
+          data-key: application.yml
+          watch:
+            enabled: true
+          ## folder name that all apps read
+          default-context: common
+          fail-fast: true
         host: localhost
         port: 8500
 
@@ -24,5 +28,25 @@ spring:
   cloud:
     consul:
       host: consul
-server:
-  port: 8080
+---
+spring:
+  profiles: default
+  cloud:
+    consul:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+---
+spring:
+  profiles: local-consul
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        fail-fast: true
+      discovery:
+        enabled: true
+        fail-fast: true

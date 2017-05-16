@@ -40,9 +40,17 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-netflix-turbine</artifactId>
 		</dependency>
+
+		<!--consul discovery-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency>
+
+		<!--consul config-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-consul-config</artifactId>
 		</dependency>
 
 		<dependency>
