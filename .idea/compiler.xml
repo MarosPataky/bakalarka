@@ -29,8 +29,10 @@
         <module name="itemmanagement" />
         <module name="itemmanagement (1)" />
         <module name="ItemManagementService" />
+        <module name="itemmanagementservice" />
         <module name="servicetemplate" />
         <module name="shopservice" />
+        <module name="turbinehystrixdashboard" />
         <module name="TurbineHystrixDashboard" />
       </profile>
     </annotationProcessing>
@@ -41,9 +43,11 @@
       <module name="hystrixdashboard" target="1.8" />
       <module name="itemmanagement" target="1.8" />
       <module name="itemmanagement (1)" target="1.8" />
+      <module name="itemmanagementservice" target="1.8" />
       <module name="ItemManagementService" target="1.8" />
       <module name="servicetemplate" target="1.8" />
       <module name="shopservice" target="1.8" />
+      <module name="turbinehystrixdashboard" target="1.8" />
       <module name="TurbineHystrixDashboard" target="1.8" />
     </bytecodeTargetLevel>
   </component>

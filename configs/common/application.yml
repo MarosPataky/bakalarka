@@ -20,4 +20,9 @@ spring:
     mongodb:
       host: mongo
 
+hystrix:
+  stream:
+    queue:
+      send-id: false
+
 

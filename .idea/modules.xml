@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ItemManagementService/itemmanagement.iml" filepath="$PROJECT_DIR$/ItemManagementService/itemmanagement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TurbineHystrixDashboard/hystrixdashboard.iml" filepath="$PROJECT_DIR$/TurbineHystrixDashboard/hystrixdashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/ApiGateway/apigateway.iml" filepath="$PROJECT_DIR$/ApiGateway/apigateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/AuthorizationServer/authorizationserver.iml" filepath="$PROJECT_DIR$/AuthorizationServer/authorizationserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bakalarka.iml" filepath="$PROJECT_DIR$/.idea/bakalarka.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShippingService/calculationservice.iml" filepath="$PROJECT_DIR$/ShippingService/calculationservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TurbineHystrixDashboard/hystrixdashboard.iml" filepath="$PROJECT_DIR$/TurbineHystrixDashboard/hystrixdashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItemManagementService/itemmanagement.iml" filepath="$PROJECT_DIR$/ItemManagementService/itemmanagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServiceTemplate/itemmanagement (1).iml" filepath="$PROJECT_DIR$/ServiceTemplate/itemmanagement (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItemManagementService/itemmanagementservice.iml" filepath="$PROJECT_DIR$/ItemManagementService/itemmanagementservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/CalculationService/servicetemplate.iml" filepath="$PROJECT_DIR$/CalculationService/servicetemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShopService/shopservice.iml" filepath="$PROJECT_DIR$/ShopService/shopservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TurbineHystrixDashboard/turbinehystrixdashboard.iml" filepath="$PROJECT_DIR$/TurbineHystrixDashboard/turbinehystrixdashboard.iml" />
     </modules>
   </component>
 </project>

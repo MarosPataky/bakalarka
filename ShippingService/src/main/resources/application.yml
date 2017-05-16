@@ -11,10 +11,13 @@ spring:
         health-check-critical-timeout: 1m
         fail-fast: true
   jackson:
-        serialization:
-          write-dates-as-timestamps: false
+    serialization:
+      write-dates-as-timestamps: false
   zipkin:
     baseUrl: http://localhost:9411
+  data:
+      mongodb:
+        database: shippingDb
 
 abc: |
   -----BEGIN PUBLIC KEY-----

@@ -8,6 +8,14 @@ zuul:
       path: /api/shops/**
       serviceId: shopService
       stripPrefix: true
+    calculation:
+      path: /api/calculation/**
+      serviceId: calculationService
+      stripPrefix: true
+    shipping:
+      path: /api/shipping/**
+      serviceId: shippingService
+      stripPrefix: true
       
       
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
