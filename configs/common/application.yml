@@ -2,6 +2,7 @@ endpoints:
   health:
     enabled: true
     sensitive: false
+
 spring:
   jackson:
     serialization:
@@ -14,11 +15,11 @@ spring:
         health-check-critical-timeout: 1m
         enabled: true
         fail-fast: true
-  zipkin:
-    baseUrl: http://zipkin:9411
   data:
     mongodb:
       host: mongo
+zipkin:
+  baseUrl: http://zipkin:9411
 
 hystrix:
   stream:

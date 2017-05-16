@@ -1,26 +1,21 @@
-#endpoints.health.enabled=true
-#endpoints.health.sensitive=false
-
 spring:
   application:
-    name: apigateway # fixme: why does application.name not work???
+    name: apiGateway
   cloud:
-    consul:
-      discovery:
-        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-        prefer-ip-address: true
-        health-check-critical-timeout: 1m
-      host: localhost
-      port: 8500
+      consul:
+        config:
+          enabled: true
+          prefix: configuration
+          format: yaml
+          data-key: application.yml
+          watch:
+            enabled: true
+          ## folder name that all apps read
+          default-context: common
+          fail-fast: true
+        host: localhost
+        port: 8500
 
-zipkin:
-      baseUrl: http://localhost:9411
-
-
-endpoints:
-  health:
-    enabled: true
-    sensitive: false
 
 ---
 spring:
@@ -28,7 +23,25 @@ spring:
   cloud:
     consul:
       host: consul
-zipkin:
-      baseUrl: http://zipkin:9411
-server:
-  port: 8080
+---
+spring:
+  profiles: default
+  cloud:
+    consul:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+---
+spring:
+  profiles: local-consul
+  cloud:
+    consul:
+      enabled: true
+      config:
+        enabled: true
+        fail-fast: true
+      discovery:
+        enabled: true
+        fail-fast: true

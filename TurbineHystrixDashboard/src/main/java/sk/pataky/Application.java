@@ -13,14 +13,14 @@ import org.springframework.core.env.Environment;
 @EnableHystrixDashboard
 @EnableTurbine
 @EnableDiscoveryClient
-public class HystrixDashboardApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
 	@Autowired
 	Environment environment;
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(HystrixDashboardApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Override
