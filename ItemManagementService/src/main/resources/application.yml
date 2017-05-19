@@ -14,7 +14,7 @@ spring:
         fail-fast: true
   data:
     mongodb:
-      database: itemDb
+      database: itemsDb
   jackson:
         serialization:
           write-dates-as-timestamps: false

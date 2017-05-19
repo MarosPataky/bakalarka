@@ -36,7 +36,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 //        String[] roles = appUser.getRoles().split(",");
-        String[] roles = user.getRoles().toArray();
+        List<String> roles = new ArrayList<>();
+        user.getRoles().forEach(role -> {
+            roles.add(role.value());
+        });
+
         for (String role : roles) {
             authorities.add(new SimpleGrantedAuthority(role));
         }

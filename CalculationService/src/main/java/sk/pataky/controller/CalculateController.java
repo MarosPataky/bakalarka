@@ -31,7 +31,7 @@ public class CalculateController {
     ShippingServiceClient shippingServiceClient;
 
     @RequestMapping(method = RequestMethod.POST)
-    public int getAll() throws InterruptedException {
+    public int getAll() {
         shopServiceClient.findShopsNearby(null, null, null);
         itemServiceClient.getDetail("some-id");
 //        LOGGER.info("ShopserivceClient retuned {}", );

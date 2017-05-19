@@ -38,7 +38,8 @@ public class ShippingController {
     public List<ShippingOption> findShippingOptions(@RequestParam(value = "lat", required = false) Double latitude,
                                     @RequestParam(value = "lon", required = false) Double longitude,
                                     @RequestParam(required = false) Double distance) throws InterruptedException {
-        Thread.sleep(delay);
+
+//        Thread.sleep(delay);
 
         if (latitude != null && longitude != null && distance != null) {
              return shippingOptionRepository.findByLocationNear(new Point(latitude, longitude), new Distance(distance, Metrics.KILOMETERS));

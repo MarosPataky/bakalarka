@@ -13,7 +13,7 @@ spring:
         fail-fast: true
   data:
     mongodb:
-      database: authorizationDb
+      database: usersDb
   jackson:
         serialization:
           write-dates-as-timestamps: false
