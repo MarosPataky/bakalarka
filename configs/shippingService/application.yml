@@ -3,3 +3,8 @@ findShippingOptions:
   calculation:
     delay: 100
 
+spring:
+  data:
+    mongodb:
+      database: shippingDb
+

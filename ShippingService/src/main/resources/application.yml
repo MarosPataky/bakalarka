@@ -1,6 +1,4 @@
 ## this file contains properties that are used when configuration is not read from consul
-
-
 spring:
   profiles: default
   cloud:
@@ -16,8 +14,8 @@ spring:
   zipkin:
     baseUrl: http://localhost:9411
   data:
-      mongodb:
-        database: shippingDb
+    mongodb:
+      database: shippingDb
 
 security:
   jwt:
