@@ -14,5 +14,7 @@ public interface ShippingOptionRepository extends MongoRepository<ShippingOption
 
         List<ShippingOption> findByLocationNear(Point point, Distance distance);
 
+//        void findByPointWithinDeliveryLocations(Point point);
+
 
 }

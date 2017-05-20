@@ -1,6 +1,6 @@
 ## this file contains properties that are used when configuration is not read from consul
 server:
-  port: 8080
+  port: 8081
 
 spring:
   cloud:

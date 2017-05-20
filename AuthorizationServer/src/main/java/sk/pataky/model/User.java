@@ -68,7 +68,8 @@ public class User extends BaseEntity {
     public enum UserRole {
         CUSTOMER("ROLE_CUSTOMER"),
         MERCHANT("ROLE_MERCHANT"),
-        SYSTEM_ADMIN("ROLE_SYSTEM_ADMIN");
+        SYSTEM_ADMIN("ROLE_SYSTEM_ADMIN"),
+        SHIPPING_PROVIDER("ROLE_SHIPPING_PROVIDER");
 
         private final String ROLE;
 

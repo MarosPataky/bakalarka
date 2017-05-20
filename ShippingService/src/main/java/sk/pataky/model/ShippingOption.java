@@ -2,6 +2,7 @@ package sk.pataky.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
+import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -15,9 +16,11 @@ public class ShippingOption {
 
     private String shippingProviderName;
 
+    private String createdBy;
+
     private Long shippingCost;
 
-    private GeoJsonPoint location;
+    private GeoJsonPolygon location;
 
     public String getId() {
         return id;
@@ -35,11 +38,11 @@ public class ShippingOption {
         this.shippingProviderName = shippingProviderName;
     }
 
-    public GeoJsonPoint getLocation() {
+    public GeoJsonPolygon getLocation() {
         return location;
     }
 
-    public void setLocation(GeoJsonPoint location) {
+    public void setLocation(GeoJsonPolygon location) {
         this.location = location;
     }
 
@@ -49,5 +52,13 @@ public class ShippingOption {
 
     public void setShippingCost(Long shippingCost) {
         this.shippingCost = shippingCost;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 }
