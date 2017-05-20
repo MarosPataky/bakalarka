@@ -16,9 +16,13 @@ zuul:
       path: /api/shipping/**
       serviceId: shippingService
       stripPrefix: true
-    shipping:
+    auth:
       path: /api/auth/**
       serviceId: authService
+      stripPrefix: true
+    hystrixturbinedashboard:
+      path: /api/turbineHystrixDashboard/**
+      serviceId: turbineHystrixDashboard
       stripPrefix: true
 
 

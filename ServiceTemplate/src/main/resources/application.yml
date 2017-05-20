@@ -1,6 +1,5 @@
 ## this file contains properties that are used when configuration is not read from consul
-server:
-  port: 8081
+
 
 spring:
   profiles: default
@@ -33,3 +32,6 @@ security:
         LciRTa884uQnkFwSguOEUYf3ni8GNRJauIuW0rVXhMOs78pKvCKmo53M0tqeC6ul
         +QIDAQAB
         -----END PUBLIC KEY-----
+
+server:
+  port: 8081
