@@ -1,0 +1,71 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Hystrix Dashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ turbinehystrixdashboard ---
+[INFO] Deleting /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbinehystrixdashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbinehystrixdashboard ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbinehystrixdashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbinehystrixdashboard ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ turbinehystrixdashboard ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ turbinehystrixdashboard ---
+[INFO] Building jar: /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.2.RELEASE:repackage (default) @ turbinehystrixdashboard ---
+[INFO] 
+[INFO] --- docker-maven-plugin:0.4.11:build (default-cli) @ turbinehystrixdashboard ---
+[INFO] Copying /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar -> /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/docker/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar
+[INFO] Copying src/main/docker/Dockerfile -> /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/docker/Dockerfile
+[INFO] Building image bakalarka/turbinehystrixdashboard
+Step 1/7 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/7 : VOLUME /tmp
+ ---> Using cache
+ ---> 2ddabce9b58e
+Step 3/7 : ADD turbinehystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
+ ---> bef7f72e271f
+Removing intermediate container ff8265a5774c
+Step 4/7 : EXPOSE 8080
+ ---> Running in bcbfcaf88e42
+ ---> 71eba90ef7e6
+Removing intermediate container bcbfcaf88e42
+Step 5/7 : RUN sh -c 'touch /app.jar'
+ ---> Running in ace2e6aabdf9
+ ---> 26d4cfde1eaa
+Removing intermediate container ace2e6aabdf9
+Step 6/7 : ENV JAVA_OPTS ""
+ ---> Running in 306034c92d8f
+ ---> 5e5e3c3acf58
+Removing intermediate container 306034c92d8f
+Step 7/7 : ENTRYPOINT sh -c java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+ ---> Running in 9b720ca7ff3a
+ ---> 600466e7cfbd
+Removing intermediate container 9b720ca7ff3a
+Successfully built 600466e7cfbd
+[INFO] Built bakalarka/turbinehystrixdashboard
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.039 s
+[INFO] Finished at: 2017-05-20T18:46:45+02:00
+[INFO] Final Memory: 51M/404M
+[INFO] ------------------------------------------------------------------------

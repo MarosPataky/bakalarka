@@ -9,6 +9,5 @@ public class StoreDto {
     public String id;
     public String brand;
 
-    // todo: custom object for location
-    public GeoJsonPoint location;
+    public CoordinateDto location;
 }

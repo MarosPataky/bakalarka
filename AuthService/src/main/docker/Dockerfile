@@ -1,6 +1,6 @@
 FROM java:8
 VOLUME /tmp
-ADD servicetemplate-0.0.1-SNAPSHOT.jar app.jar
+ADD authservice-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS=""

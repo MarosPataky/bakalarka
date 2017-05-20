@@ -21,7 +21,15 @@ zuul:
       path: /api/shipping/**
       serviceId: shippingService
       stripPrefix: true
-      
+    auth:
+      path: /api/auth/**
+      serviceId: authService
+      stripPrefix: true
+    hystrixturbinedashboard:
+      path: /api/turbineHystrixDashboard/**
+      serviceId: turbineHystrixDashboard
+      stripPrefix: true
+
       
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
 ribbon:

@@ -16,6 +16,10 @@ zuul:
       path: /api/shipping/**
       serviceId: shippingService
       stripPrefix: true
+    shipping:
+      path: /api/auth/**
+      serviceId: authService
+      stripPrefix: true
 
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

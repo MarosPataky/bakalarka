@@ -9,7 +9,5 @@ public class CreateStoreDto {
 
     public String brand;
 
-    public double latitude;
-
-    public double longitude;
+    public CoordinateDto location;
 }

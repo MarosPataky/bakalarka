@@ -6,6 +6,7 @@ import org.springframework.data.geo.Metrics;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
+import sk.pataky.dto.CoordinateDto;
 import sk.pataky.dto.CreateStoreDto;
 import sk.pataky.dto.StoreDto;
 import sk.pataky.model.Store;
@@ -40,8 +41,9 @@ public class StoreServiceImpl implements StoreService {
     private StoreDto convertToDto(Store store) {
         StoreDto storeDto = new StoreDto();
         storeDto.brand = store.getBrand();
-        storeDto.id = store.getId(); // TODO: refactor this -> do not expose database IDs
-        storeDto.location = store.getLocation();
+        storeDto.id = store.getId();
+        GeoJsonPoint point = store.getLocation();
+        storeDto.location = new CoordinateDto(point.getX(), point.getY());
         return storeDto;
     }
 
@@ -50,7 +52,7 @@ public class StoreServiceImpl implements StoreService {
 
         Store store = new Store();
         store.setBrand(createStoreDto.brand);
-        store.setLocation(new GeoJsonPoint(createStoreDto.latitude, createStoreDto.longitude));
+        store.setLocation(new GeoJsonPoint(createStoreDto.location.lat, createStoreDto.location.lon));
 
         storeRepository.save(store);
         return store.getId();
@@ -67,7 +69,7 @@ public class StoreServiceImpl implements StoreService {
         }
 
         store.setBrand(createStoreDto.brand);
-        store.setLocation(new GeoJsonPoint(createStoreDto.latitude, createStoreDto.longitude));
+        store.setLocation(new GeoJsonPoint(createStoreDto.location.lat, createStoreDto.location.lon));
 
         storeRepository.save(store);
     }

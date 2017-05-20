@@ -10,15 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import sk.pataky.client.ItemServiceBean;
-import sk.pataky.dto.BrandItemsDto;
 import sk.pataky.dto.CreateStoreDto;
 import sk.pataky.dto.StoreDto;
-import sk.pataky.model.Brand;
-import sk.pataky.model.Store;
 import sk.pataky.service.StoreService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,8 +25,6 @@ public class ShopController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShopController.class);
 
-    @Autowired
-    private ItemServiceBean itemServiceBean;
 
     @Autowired
     private StoreService storeService;
@@ -62,21 +55,4 @@ public class ShopController {
     }
 
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/{brand}/items")
-//    public BrandItemsDto getBrandWithItemsByBrand(@PathVariable(value = "brand") String brand) {
-//        List<Store> stores = new ArrayList<>();
-//
-//        BrandItemsDto brandItemsDto = new BrandItemsDto();
-//
-//        Brand someBrand = new Brand();
-//        someBrand.setName(brand);
-////        stores.add(new Store(someBrand));
-////        stores.add(new Store(someBrand));
-//
-//        brandItemsDto.brand = someBrand;
-//
-//        brandItemsDto.items = itemServiceBean.getItems(brand);
-//
-//        return brandItemsDto;
-//    }
 }

@@ -2,7 +2,7 @@
   "version": "1.0",
   "repos" : [{
     "name" : "configuration",
-    "url" : "file:///Users/macbook/Documents/workspace/bakalarka/.git",
+    "url" : "https://github.com/MarosPataky/bakalarka.git",
     "source_root": "configs",
     "include_branch_name" : false,
     "branches" : ["master"],

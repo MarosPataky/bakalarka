@@ -11,7 +11,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.core.env.Environment;
 import org.springframework.data.geo.Distance;
-import org.springframework.data.geo.Metric;
 import org.springframework.data.geo.Metrics;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import sk.pataky.model.Store;
@@ -23,9 +22,9 @@ import java.util.List;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCircuitBreaker
-public class ShopServiceApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ShopServiceApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
 	@Autowired
     private StoreRepository storeRepository;
@@ -34,7 +33,7 @@ public class ShopServiceApplication implements CommandLineRunner {
     private Environment environment;
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShopServiceApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Override

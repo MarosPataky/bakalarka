@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="apigateway" />
         <module name="authorizationserver" />
+        <module name="authservice" />
         <module name="calculationservice" />
         <module name="hystrixdashboard" />
         <module name="itemmanagement" />
@@ -39,6 +40,7 @@
     <bytecodeTargetLevel>
       <module name="apigateway" target="1.8" />
       <module name="authorizationserver" target="1.8" />
+      <module name="authservice" target="1.8" />
       <module name="calculationservice" target="1.8" />
       <module name="hystrixdashboard" target="1.8" />
       <module name="itemmanagement" target="1.8" />

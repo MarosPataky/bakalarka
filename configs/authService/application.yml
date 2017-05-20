@@ -1,0 +1,8 @@
+### empty for now
+aaaa: bbbb
+
+spring:
+  data:
+    mongodb:
+      database: usersDb
+
