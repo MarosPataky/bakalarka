@@ -1,5 +1,5 @@
 .idea/
 .idea/libraries
 /target
-.*.jar
-deivery/**
+**.jar
+delivery/**
