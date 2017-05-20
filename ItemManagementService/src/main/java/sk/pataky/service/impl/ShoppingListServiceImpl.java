@@ -29,8 +29,10 @@ public class ShoppingListServiceImpl implements ShoppingListService {
     private ItemRepository itemRepository; // // FIXME: 20/04/2017 use service here or rather change the model!
 
     @Override
-    public String createShoppingList(CreateShoppingListDto createShoppingListDto) {
+    public String createShoppingList(CreateShoppingListDto createShoppingListDto, String userId) {
         ShoppingList shoppingList = new ShoppingList();
+
+        shoppingList.setCreatedBy(userId);
 
         shoppingList.setCreatedOn(new Date());
         List<ShoppingListEntry> shoppingListEntries = shoppingList.getEntires();
@@ -62,29 +64,33 @@ public class ShoppingListServiceImpl implements ShoppingListService {
         List<ShoppingListDto> dtos = new ArrayList<>();
 
         shoppingListRepository.findAll().forEach(shoppingList -> {
-            ShoppingListDto dto = new ShoppingListDto();
-            shoppingList.getEntires().forEach(entry -> {
-                ShoppingListItemDto shoppingListItemDto = new ShoppingListItemDto();
-                shoppingListItemDto.id = entry.getItem().getId();
-                shoppingListItemDto.quantity = entry.getQuantity();
-                dto.items.add(shoppingListItemDto);
-            });
-
-            dto.id = shoppingList.getId();
-            dto.createdOn = shoppingList.getCreatedOn();
-
+            ShoppingListDto dto = toShoppingListDto(shoppingList);
             dtos.add(dto);
         });
 
         return dtos;
     }
 
+    private ShoppingListDto toShoppingListDto(ShoppingList shoppingList) {
+        ShoppingListDto dto = new ShoppingListDto();
+        shoppingList.getEntires().forEach(entry -> {
+            ShoppingListItemDto shoppingListItemDto = new ShoppingListItemDto();
+            shoppingListItemDto.id = entry.getItem().getId();
+            shoppingListItemDto.quantity = entry.getQuantity();
+            dto.items.add(shoppingListItemDto);
+        });
+
+        dto.id = shoppingList.getId();
+        dto.createdOn = shoppingList.getCreatedOn();
+        return dto;
+    }
+
     @Override
-    public void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto) {
+    public void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto, String userId) {
 
         ShoppingList shoppingList = shoppingListRepository.findOne(id);
 
-        if (shoppingList == null) {
+        if (shoppingList == null || !userId.equals(shoppingList.getCreatedBy())) {
             return; // TODO: 21/04/2017 return not found exception
         }
 
@@ -103,5 +109,25 @@ public class ShoppingListServiceImpl implements ShoppingListService {
         });
 
         shoppingListRepository.save(shoppingList);
+    }
+
+    @Override
+    public List<ShoppingListDto> findAllForUser(String userId) {
+        List<ShoppingListDto> dtos = new ArrayList<>();
+        shoppingListRepository.findByCreatedByEquals(userId).forEach(shoppingList -> {
+            ShoppingListDto dto = toShoppingListDto(shoppingList);
+            dtos.add(dto);
+        });
+        return dtos;
+    }
+
+    @Override
+    public void deleteShoppingList(String id, String userId) {
+        ShoppingList shoppingList = shoppingListRepository.findOne(id);
+        if (shoppingList == null || !userId.equals(shoppingList.getCreatedBy())) {
+            return; // TODO: 21/04/2017 return not found exception
+        }
+
+        shoppingListRepository.delete(id);
     }
 }

@@ -30,33 +30,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-//    @RequestMapping(method = RequestMethod.GET)
-//    public List<ItemDto> getAll(@RequestParam(value = "brand", required = false) String brand) {
-//        if (brand != null) {
-//            LOGGER.info("GetALL request with brand={}", brand);
-//            return itemService.getAll()
-//                    .parallelStream()
-//                    .filter(item -> item.brand.equalsIgnoreCase(brand))
-//                    .collect(Collectors.toList());
-//        }
-//        LOGGER.info("GetAll request received!");
-//        return itemService.getAll();
-//    }
-
-//    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-//    public ItemDetailDto getDetail(@PathVariable("id") String id) {
-//        return itemService.getDetail(id);
-//    }
-//
-//    @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
-//    public void updateItem(@PathVariable("id") String id,
-//                           @RequestBody CreateItemDto createItemDto) {
-//        itemService.updateItem(id, createItemDto);
-//        // todo: return some meaningful response
-//    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SYSTEM_ADMIN')")
+    @PreAuthorize("hasRole('SYSTEM_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
     public List<UserDto> listUsers() {
 
@@ -71,7 +45,7 @@ public class UserController {
         return userService.createUser(createUserDto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SYSTEM_ADMIN')")
+    @PreAuthorize("hasRole('SYSTEM_ADMIN')")
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public UserDto updateUser(@PathVariable(name = "id") String id,
                               @RequestBody UpdateUserDto updateUserDto) {
@@ -80,7 +54,7 @@ public class UserController {
         return userDto;
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SYSTEM_ADMIN')")
+    @PreAuthorize("hasRole('SYSTEM_ADMIN')")
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteUser(@PathVariable(name = "id") String id) {

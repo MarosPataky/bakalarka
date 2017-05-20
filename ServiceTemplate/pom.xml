@@ -120,6 +120,8 @@
             <artifactId>spring-security-jwt</artifactId>
         </dependency>
 
+
+
     </dependencies>
 
     <build>

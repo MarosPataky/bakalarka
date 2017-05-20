@@ -3,6 +3,7 @@ package sk.pataky.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,11 +47,13 @@ public class ShopController {
         return storeService.getAll();
     }
 
+    @PreAuthorize("hasAnyRole('SYSTEM_ADMIN', 'MERCHANT')")
     @RequestMapping(method = RequestMethod.POST)
     public String createStore(@RequestBody CreateStoreDto createStoreDto) {
         return storeService.createStore(createStoreDto);
     }
 
+    @PreAuthorize("hasAnyRole('SYSTEM_ADMIN', 'MERCHANT')")
     @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
     public void updateStore(@PathVariable(name = "id") String id,
                             @RequestBody CreateStoreDto createStoreDto) {
@@ -59,21 +62,21 @@ public class ShopController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{brand}/items")
-    public BrandItemsDto getBrandWithItemsByBrand(@PathVariable(value = "brand") String brand) {
-        List<Store> stores = new ArrayList<>();
-
-        BrandItemsDto brandItemsDto = new BrandItemsDto();
-
-        Brand someBrand = new Brand();
-        someBrand.setName(brand);
-//        stores.add(new Store(someBrand));
-//        stores.add(new Store(someBrand));
-
-        brandItemsDto.brand = someBrand;
-
-        brandItemsDto.items = itemServiceBean.getItems(brand);
-
-        return brandItemsDto;
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/{brand}/items")
+//    public BrandItemsDto getBrandWithItemsByBrand(@PathVariable(value = "brand") String brand) {
+//        List<Store> stores = new ArrayList<>();
+//
+//        BrandItemsDto brandItemsDto = new BrandItemsDto();
+//
+//        Brand someBrand = new Brand();
+//        someBrand.setName(brand);
+////        stores.add(new Store(someBrand));
+////        stores.add(new Store(someBrand));
+//
+//        brandItemsDto.brand = someBrand;
+//
+//        brandItemsDto.items = itemServiceBean.getItems(brand);
+//
+//        return brandItemsDto;
+//    }
 }

@@ -9,9 +9,13 @@ import java.util.List;
  *
  */
 public interface ShoppingListService {
-    String createShoppingList(CreateShoppingListDto createShoppingListDto);
+    String createShoppingList(CreateShoppingListDto createShoppingListDto, String userId);
 
     List<ShoppingListDto> findAll();
 
-    void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto);
+    void updateShoppingList(String id, CreateShoppingListDto createShoppingListDto, String userId);
+
+    List<ShoppingListDto> findAllForUser(String userId);
+
+    void deleteShoppingList(String id, String userId);
 }

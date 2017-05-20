@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
-public class Price extends BaseEntity {
+public class Price {
 
     private String shop;
     private long price;

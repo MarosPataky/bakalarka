@@ -14,6 +14,9 @@ public class ShoppingList extends BaseEntity {
 
     private Date createdOn;
 
+    // user_id of user that created it
+    private String createdBy;
+
     public ShoppingList() {
     }
 
@@ -34,5 +37,13 @@ public class ShoppingList extends BaseEntity {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 }

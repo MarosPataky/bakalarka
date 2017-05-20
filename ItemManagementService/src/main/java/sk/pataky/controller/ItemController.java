@@ -1,17 +1,15 @@
 package sk.pataky.controller;
 
 import com.mongodb.gridfs.GridFSDBFile;
-import com.mongodb.gridfs.GridFSFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,6 +60,7 @@ public class ItemController {
         return itemService.getDetail(id);
     }
 
+    @PreAuthorize("hasAnyRole('SYSTEM_ADMIN', 'MERCHANT')")
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public void updateItem(@PathVariable("id") String id,
                            @RequestBody CreateItemDto createItemDto) {
@@ -69,22 +68,24 @@ public class ItemController {
         // todo: return some meaningful response
     }
 
+    @PreAuthorize("hasAnyRole('SYSTEM_ADMIN', 'MERCHANT')")
     @RequestMapping(method = RequestMethod.POST)
     public String createItem(@RequestBody CreateItemDto createItemDto) {
         return itemService.createItem(createItemDto);
     }
 
-    @RequestMapping(value="/{id}/image", method=RequestMethod.POST)
-    public String handleFileUpload(@PathVariable String id,
-            @RequestParam(required = false) MultipartFile file) throws IOException {
+    @PreAuthorize("hasAnyRole('SYSTEM_ADMIN', 'MERCHANT')")
+    @RequestMapping(value = "/{id}/image", method = RequestMethod.POST)
+    public String handleImageUploadForItem(@PathVariable String id,
+                                           @RequestParam(required = false) MultipartFile file) throws IOException {
         LOGGER.info("Received file with size {}", file.getSize());
         String imageId = itemService.saveImageForItem(id, file);
 
-       return imageId;
+        return imageId;
     }
 
-    @RequestMapping(value="/{id}/image", method=RequestMethod.GET)
-    public ResponseEntity handleFileUploadToDocument(@PathVariable String id) throws IOException {
+    @RequestMapping(value = "/{id}/image", method = RequestMethod.GET)
+    public ResponseEntity downloadImageForItem(@PathVariable String id) throws IOException {
 
         GridFSDBFile image = itemService.getImageForItem(id);
 
