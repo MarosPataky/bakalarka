@@ -1,5 +1,7 @@
 package sk.pataky.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.config.ResourceNotFoundException;
@@ -37,6 +39,8 @@ import java.util.List;
 @RefreshScope
 public class ShippingController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShippingController.class);
+
     @Autowired
     private ShippingOptionService shippingOptionService;
 
@@ -49,7 +53,7 @@ public class ShippingController {
     @RequestMapping(method = RequestMethod.GET)
     public List<ShippingOptionDto> findShippingOptions(@RequestParam(value = "lat", required = false) Double latitude,
                                                        @RequestParam(value = "lon", required = false) Double longitude) throws InterruptedException {
-
+        LOGGER.info("Received findShippingOptions request with lat {} and lon {}", latitude, longitude);
         return shippingOptionService.findAll(latitude, longitude);
     }
 

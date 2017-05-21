@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import sk.pataky.client.dto.StoreDto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,7 @@ public interface ShopServiceClient {
             LOGGER.info("Fallback happening!");
             // TODO: 12/05/2017 caching!
 
-            return new ArrayList<>();
+            return Collections.emptyList();
         }
 
 

@@ -40,9 +40,9 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public String createUser(@RequestBody CreateUserDto createUserDto) {
+    public void createUser(@RequestBody CreateUserDto createUserDto) {
         // create this user
-        return userService.createUser(createUserDto);
+        userService.createUser(createUserDto);
     }
 
     @PreAuthorize("hasRole('SYSTEM_ADMIN')")

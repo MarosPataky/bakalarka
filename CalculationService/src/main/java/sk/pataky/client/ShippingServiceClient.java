@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import sk.pataky.client.dto.ShippingOptionDto;
+
+import java.util.Collections;
+import java.util.List;
 
 @FeignClient(
         name = "shippingService",
@@ -16,16 +21,17 @@ public interface ShippingServiceClient {
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/shipping")
-    void findShippingOptions();
-
+    List<ShippingOptionDto> findShippingOptions(@RequestParam(value = "lat", required = false) Double latitude,
+                                                @RequestParam(value = "lon", required = false) Double longitude);
     @Component
     class ShippingServiceFallback implements ShippingServiceClient {
 
         private static final Logger LOGGER = LoggerFactory.getLogger(ShippingServiceFallback.class);
 
         @Override
-        public void findShippingOptions() {
-
+        public List<ShippingOptionDto> findShippingOptions(@RequestParam(value = "lat", required = false) Double latitude, @RequestParam(value = "lon", required = false) Double longitude) {
+            // todo: cache maybe?
+            return Collections.emptyList();
         }
     }
 }

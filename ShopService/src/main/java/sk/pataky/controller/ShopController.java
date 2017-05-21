@@ -54,5 +54,4 @@ public class ShopController {
         // TODO: return meaningful response
     }
 
-
 }

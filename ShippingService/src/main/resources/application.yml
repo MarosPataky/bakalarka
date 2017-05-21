@@ -32,4 +32,4 @@ security:
         -----END PUBLIC KEY-----
 
 server:
-  port: 8080
+  port: 8090

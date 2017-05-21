@@ -28,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String createUser(CreateUserDto createUserDto) {
+        if (createUserDto.email == null || createUserDto.username == null || createUserDto.password == null) {
+            return null;
+        }
         User user = new User();
         user.setUsername(createUserDto.username);
         user.setPassword(createUserDto.password);

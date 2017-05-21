@@ -81,35 +81,6 @@
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
         </dependency>
 
-        <!--security-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security.oauth</groupId>-->
-            <!--<artifactId>spring-security-oauth2</artifactId>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<artifactId>jackson-mapper-asl</artifactId>-->
-                    <!--<groupId>org.codehaus.jackson</groupId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security</groupId>-->
-            <!--<artifactId>spring-security-jwt</artifactId>-->
-        <!--</dependency>-->
-
-
-        <!--persistence-->
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

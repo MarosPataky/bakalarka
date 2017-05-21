@@ -57,7 +57,7 @@ public class ShoppingListController {
 
     @PreAuthorize("hasAnyRole('CUSTOMER', 'SYSTEM_ADMIN', 'MERCHANT')")
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
-    public void updateShoppingList(@PathVariable() String id,
+    public void deleteShoppingList(@PathVariable() String id,
                                    Authentication authentication) {
         String userId = ((UserDetailsImpl) authentication.getPrincipal()).getId();
         // TODO: 21/04/2017 replace with updateShoppingListDto + add PATCH operation (optional)

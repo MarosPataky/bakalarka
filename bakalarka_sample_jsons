@@ -1,0 +1,36 @@
+{
+	"name" : "Polohruba muka",
+	"brand" : "Melinda",
+	"prices" : {
+		"Tesco" : 99,
+		"Kaufland" : 79
+	},
+	"amount" : 1000,
+	"itemQuantityUnit" : "MILLILITRES",
+	"description" : "Polohruba muka strednej kvality s vysokou belostou"
+}
+
+
+
+
+{
+	"items" : [
+		{
+			"id" : "5920c3ccbfe5230005dc9514",
+			"quantity" : 3
+		},
+		{
+			"id" : "5920c39cbfe5230005dc9513",
+			"quantity" : 1
+		}
+		],
+		"shipping" : {
+			"lon" : 48.7348994,
+			"lat" : 21.291045
+		},
+		"location" : {
+			"lat": 21.291045,
+			"lon" : 48.7348994,
+			"maxDistance" : 10
+		}
+}

@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ItemService {
 
-    List<ItemDto> getAll();
+    List<ItemDto> getAll(String brand, String name);
     ItemDetailDto getDetail(String id);
 
     String createItem(CreateItemDto createItemDto);

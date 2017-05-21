@@ -20,6 +20,7 @@ zuul:
       path: /api/auth/**
       serviceId: authService
       stripPrefix: true
+  sensitiveHeaders: Cookie,Set-Cookie
 
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

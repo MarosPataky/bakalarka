@@ -13,4 +13,8 @@ import java.util.List;
 @Repository
 public interface ItemRepository extends MongoRepository<Item, String> {
     List<Item> findByNameContainingIgnoreCase(String name);
+
+    List<Item> findByBrandContainingIgnoreCaseAndNameContainingIgnoreCase(String brand, String name);
+
+    List<Item> findByBrandContainingIgnoreCase(String brand);
 }

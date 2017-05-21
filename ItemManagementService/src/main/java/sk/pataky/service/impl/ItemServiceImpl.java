@@ -32,23 +32,38 @@ public class ItemServiceImpl implements ItemService {
     private GridFsTemplate gridFsTemplate;
 
     @Override
-    public List<ItemDto> getAll() {
+    public List<ItemDto> getAll(String brand, String name) {
+
+        List<Item> items;
+        if (brand != null && name != null) {
+            items = itemRepository.findByBrandContainingIgnoreCaseAndNameContainingIgnoreCase(brand, name);
+        } else if (brand != null) {
+            items = itemRepository.findByBrandContainingIgnoreCase(brand);
+        } else if (name != null) {
+            items = itemRepository.findByNameContainingIgnoreCase(name);
+        } else {
+            items = itemRepository.findAll();
+        }
 
         List<ItemDto> itemDtos = new ArrayList<>();
-        for (Item item : itemRepository.findAll()) {
-            ItemDto itemDto = new ItemDto();
-//            itemDto.description = item.getDescription();
-            itemDto.lowestPrice = item.getPrices().get(0).getPrice(); // todo: null pointer
-            itemDto.name = item.getName();
-            itemDto.itemQuantityUnit = item.getItemQuantityUnit();
-            itemDto.amount = item.getAmount();
-            itemDto.brand = item.getBrand();
-            itemDto.id = item.getId();
-            itemDto.imageId = item.getImage();
-
+        for (Item item : items) {
+            ItemDto itemDto = toDto(item);
             itemDtos.add(itemDto);
         }
         return itemDtos;
+    }
+
+    private ItemDto toDto(Item item) {
+        ItemDto itemDto = new ItemDto();
+//            itemDto.description = item.getDescription();
+        itemDto.lowestPrice = item.getPrices().get(0).getPrice(); // todo: null pointer
+        itemDto.name = item.getName();
+        itemDto.itemQuantityUnit = item.getItemQuantityUnit();
+        itemDto.amount = item.getAmount();
+        itemDto.brand = item.getBrand();
+        itemDto.id = item.getId();
+        itemDto.imageId = item.getImage();
+        return itemDto;
     }
 
     @Override

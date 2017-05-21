@@ -36,36 +36,32 @@
 [INFO] Copying /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar -> /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/docker/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar
 [INFO] Copying src/main/docker/Dockerfile -> /Users/macbook/Documents/workspace/bakalarka/TurbineHystrixDashboard/target/docker/Dockerfile
 [INFO] Building image bakalarka/turbinehystrixdashboard
-Step 1/7 : FROM java:8
+Step 1/6 : FROM java:8
  ---> d23bdf5b1b1b
-Step 2/7 : VOLUME /tmp
+Step 2/6 : VOLUME /tmp
  ---> Using cache
  ---> 2ddabce9b58e
-Step 3/7 : ADD turbinehystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
- ---> bef7f72e271f
-Removing intermediate container ff8265a5774c
-Step 4/7 : EXPOSE 8080
- ---> Running in bcbfcaf88e42
- ---> 71eba90ef7e6
-Removing intermediate container bcbfcaf88e42
-Step 5/7 : RUN sh -c 'touch /app.jar'
- ---> Running in ace2e6aabdf9
- ---> 26d4cfde1eaa
-Removing intermediate container ace2e6aabdf9
-Step 6/7 : ENV JAVA_OPTS ""
- ---> Running in 306034c92d8f
- ---> 5e5e3c3acf58
-Removing intermediate container 306034c92d8f
-Step 7/7 : ENTRYPOINT sh -c java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar
- ---> Running in 9b720ca7ff3a
- ---> 600466e7cfbd
-Removing intermediate container 9b720ca7ff3a
-Successfully built 600466e7cfbd
+Step 3/6 : ADD turbinehystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
+ ---> 69aeb5a8fc0b
+Removing intermediate container 6f382e094af0
+Step 4/6 : EXPOSE 8080
+ ---> Running in e22be04d754a
+ ---> fa13b9f53c58
+Removing intermediate container e22be04d754a
+Step 5/6 : RUN sh -c 'touch /app.jar'
+ ---> Running in 8b84d20e4033
+ ---> 507bbcb15035
+Removing intermediate container 8b84d20e4033
+Step 6/6 : CMD java $JAVA_OPTIONS -jar app.jar
+ ---> Running in 268d50379f7d
+ ---> e2b6b9281665
+Removing intermediate container 268d50379f7d
+Successfully built e2b6b9281665
 [INFO] Built bakalarka/turbinehystrixdashboard
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 16.039 s
-[INFO] Finished at: 2017-05-20T18:46:45+02:00
-[INFO] Final Memory: 51M/404M
+[INFO] Total time: 17.047 s
+[INFO] Finished at: 2017-05-20T22:17:00+02:00
+[INFO] Final Memory: 51M/412M
 [INFO] ------------------------------------------------------------------------

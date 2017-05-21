@@ -50,7 +50,7 @@ public class ShippingOptionServiceImpl implements ShippingOptionService {
 
         List<Point> polygonPoints = new ArrayList<>();
         createShippingOptionDto.area.polygon.forEach(coordinateDto -> {
-            polygonPoints.add(new Point(coordinateDto.lon, coordinateDto.lat));
+            polygonPoints.add(new Point(coordinateDto.lat, coordinateDto.lon));
         });
         GeoJsonPolygon geoJsonPolygon = new GeoJsonPolygon(polygonPoints);
         shippingOption.setLocation(geoJsonPolygon);
@@ -62,7 +62,7 @@ public class ShippingOptionServiceImpl implements ShippingOptionService {
         List<ShippingOption> shippingOptions;
         if (latitude != null && longitude != null) {
             shippingOptions = mongoTemplate.find(new Query(
-                    Criteria.where("location").intersects((new GeoJsonPoint(longitude, latitude)))), ShippingOption.class);
+                    Criteria.where("location").intersects((new GeoJsonPoint(latitude, longitude)))), ShippingOption.class);
 //            return shippingOptionRepository.findByLocationNear(new Point(latitude, longitude), new Distance(distance, Metrics.KILOMETERS));
         } else {
             shippingOptions = shippingOptionRepository.findAll();

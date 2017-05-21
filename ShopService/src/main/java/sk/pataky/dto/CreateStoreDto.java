@@ -1,7 +1,5 @@
 package sk.pataky.dto;
 
-import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
-
 /**
  *
  */

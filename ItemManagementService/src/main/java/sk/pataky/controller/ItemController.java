@@ -43,16 +43,17 @@ public class ItemController {
     private ItemService itemService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<ItemDto> getAll(@RequestParam(value = "brand", required = false) String brand) {
-        if (brand != null) {
-            LOGGER.info("GetALL request with brand={}", brand);
-            return itemService.getAll()
-                    .parallelStream()
-                    .filter(item -> item.brand.equalsIgnoreCase(brand))
-                    .collect(Collectors.toList());
-        }
-        LOGGER.info("GetAll request received!");
-        return itemService.getAll();
+    public List<ItemDto> getAll(@RequestParam(value = "brand", required = false) String brand,
+                                @RequestParam(value = "name", required = false) String name) {
+//        if (brand != null) {
+//            LOGGER.info("GetALL request with brand={}", brand);
+//            return itemService.getAll()
+//                    .parallelStream()
+//                    .filter(item -> item.brand.equalsIgnoreCase(brand))
+//                    .collect(Collectors.toList());
+//        }
+        LOGGER.info("GetAll request received with brand={} and name = {}!", brand, name);
+        return itemService.getAll(brand, name);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
@@ -94,15 +95,4 @@ public class ItemController {
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
                 .body(new InputStreamResource(image.getInputStream()));
     }
-
-//    // this works!
-//    @RequestMapping(method = RequestMethod.GET)
-//    public ResponseEntity findAll(@RequestParam(value = "name", required = false) String name) {
-//
-//
-//        List<Item> items = itemRepository.findByTitleContainingIgnoreCase(name);
-////        item.getPrices().get(0).setItem(item);
-////        ItemService.save(item);
-//        return new ResponseEntity(HttpStatus.CREATED);
-//    }
 }

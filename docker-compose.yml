@@ -21,50 +21,64 @@ services:
     #### system services ####
   authservice:
     image: bakalarka/authservice
+    mem_limit: 400m
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
   apigateway:
     image: bakalarka/apigateway
+    mem_limit: 400m
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
     ports:
       - "8080:8080"
   itemmanagementservice:
     image: bakalarka/itemmanagementservice
+    mem_limit: 400m
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
   shopservice:
     image: bakalarka/shopservice
+    mem_limit: 400m
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
   calculationservice:
+    mem_limit: 400m
     image: bakalarka/calculationservice
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-    ports:
-      - "9001:8080"
+      - JAVA_OPTIONS=-Xmx200m
+    # ports:
+      # - "9001:8080"
   shippingservice:
+    mem_limit: 400m
     image: bakalarka/shippingservice
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
   turbinehystrixdashboard:
+    mem_limit: 400m
     image: bakalarka/turbinehystrixdashboard
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
     # ports:
     #   - "8081:8080"
 

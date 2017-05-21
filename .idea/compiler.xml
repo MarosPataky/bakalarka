@@ -32,9 +32,10 @@
         <module name="ItemManagementService" />
         <module name="itemmanagementservice" />
         <module name="servicetemplate" />
+        <module name="shippingservice" />
         <module name="shopservice" />
-        <module name="turbinehystrixdashboard" />
         <module name="TurbineHystrixDashboard" />
+        <module name="turbinehystrixdashboard" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -48,6 +49,7 @@
       <module name="itemmanagementservice" target="1.8" />
       <module name="ItemManagementService" target="1.8" />
       <module name="servicetemplate" target="1.8" />
+      <module name="shippingservice" target="1.8" />
       <module name="shopservice" target="1.8" />
       <module name="turbinehystrixdashboard" target="1.8" />
       <module name="TurbineHystrixDashboard" target="1.8" />
