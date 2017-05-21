@@ -1,6 +1,7 @@
 ### empty for now
 findShippingOptions:
   calculation:
+    testing: true
     delay: 100
 
 spring:

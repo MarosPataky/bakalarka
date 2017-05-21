@@ -19,14 +19,16 @@ services:
     command: consul:8500
 
     #### system services ####
-  authservice:
-    image: bakalarka/authservice
+  turbinehystrixdashboard:
     mem_limit: 400m
+    image: bakalarka/turbinehystrixdashboard
     depends_on:
       - start_dependencies
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - JAVA_OPTIONS=-Xmx200m
+    ports:
+      - "8081:8080"
   apigateway:
     image: bakalarka/apigateway
     mem_limit: 400m
@@ -37,6 +39,14 @@ services:
       - JAVA_OPTIONS=-Xmx200m
     ports:
       - "8080:8080"
+  authservice:
+    image: bakalarka/authservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
   itemmanagementservice:
     image: bakalarka/itemmanagementservice
     mem_limit: 400m
@@ -71,16 +81,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - JAVA_OPTIONS=-Xmx200m
-  turbinehystrixdashboard:
-    mem_limit: 400m
-    image: bakalarka/turbinehystrixdashboard
-    depends_on:
-      - start_dependencies
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-      - JAVA_OPTIONS=-Xmx200m
-    # ports:
-    #   - "8081:8080"
+  
 
       
   

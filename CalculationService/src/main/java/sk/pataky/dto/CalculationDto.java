@@ -6,9 +6,9 @@ import java.util.List;
  *
  */
 public class CalculationDto {
-
+    public List<String> shopBrands;
     public List<CalculationItemEntry> items;
-    public CalculationShippingDto shipping;
+    public CalculationRequestShippingDto shipping;
     public CalculationUserPositionDto location;
 
 

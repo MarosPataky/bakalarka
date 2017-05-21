@@ -1,6 +1,4 @@
 ## this file contains properties that are used when configuration is not read from consul
-
-
 spring:
   profiles: default
   cloud:

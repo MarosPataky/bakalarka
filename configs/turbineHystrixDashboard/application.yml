@@ -7,3 +7,5 @@ turbine:
 
 testing:
   property: "from consul turbineHystrixDashboard/appplication.yml"
+
+hystrix.stream.queue.send-id: false

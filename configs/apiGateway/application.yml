@@ -23,9 +23,9 @@ zuul:
   sensitiveHeaders: Cookie,Set-Cookie
 
 
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 ribbon:
-  connect-timeout: 5000
+  connect-timeout: 10000
   read-timeout: 10000
 
 testing:

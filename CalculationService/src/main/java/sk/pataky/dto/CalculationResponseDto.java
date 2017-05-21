@@ -6,9 +6,9 @@ import java.util.List;
  *
  */
 public class CalculationResponseDto {
-    public List<ShoppingOption> shoppingOptions;
+    public List<CalculationResponseShoppingOption> shoppingOptions;
 
     // either shops are filles, if shipping was not requried
-    public List<StoreLocationResponseDto> stores;
-    public List<ShippingOptionsResponseDto> shipping;
+    public List<CalculationResponseStoreLocationDto> stores;
+    public List<CalculationResponseShippingOptionDto> shipping;
 }

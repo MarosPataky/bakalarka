@@ -3,7 +3,7 @@ package sk.pataky.dto;
 /**
  *
  */
-public class CalculationShippingDto {
+public class CalculationRequestShippingDto {
     public Double lat;
     public Double lon;
 }

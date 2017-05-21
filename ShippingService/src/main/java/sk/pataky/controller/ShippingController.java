@@ -50,9 +50,20 @@ public class ShippingController {
     @Value("${findShippingOptions.calculation.delay:100}")
     private Long delay;
 
+    @Value("${findShippingOptions.calculation.testing:false}")
+    private boolean testing;
+
     @RequestMapping(method = RequestMethod.GET)
     public List<ShippingOptionDto> findShippingOptions(@RequestParam(value = "lat", required = false) Double latitude,
                                                        @RequestParam(value = "lon", required = false) Double longitude) throws InterruptedException {
+
+        // testing artificial delay
+        if (testing) {
+            LOGGER.info("Entering artificial sleep for testing purporses.");
+            Thread.sleep(delay);
+        }
+
+
         LOGGER.info("Received findShippingOptions request with lat {} and lon {}", latitude, longitude);
         return shippingOptionService.findAll(latitude, longitude);
     }

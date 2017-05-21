@@ -42,26 +42,26 @@ Step 2/6 : VOLUME /tmp
  ---> Using cache
  ---> 2ddabce9b58e
 Step 3/6 : ADD turbinehystrixdashboard-0.0.1-SNAPSHOT.jar app.jar
- ---> 69aeb5a8fc0b
-Removing intermediate container 6f382e094af0
+ ---> 6862249294fd
+Removing intermediate container f5976bf5ef28
 Step 4/6 : EXPOSE 8080
- ---> Running in e22be04d754a
- ---> fa13b9f53c58
-Removing intermediate container e22be04d754a
+ ---> Running in 6e70c8053f16
+ ---> 2261e93e2705
+Removing intermediate container 6e70c8053f16
 Step 5/6 : RUN sh -c 'touch /app.jar'
- ---> Running in 8b84d20e4033
- ---> 507bbcb15035
-Removing intermediate container 8b84d20e4033
+ ---> Running in 052f05d55159
+ ---> d2601160dbbd
+Removing intermediate container 052f05d55159
 Step 6/6 : CMD java $JAVA_OPTIONS -jar app.jar
- ---> Running in 268d50379f7d
- ---> e2b6b9281665
-Removing intermediate container 268d50379f7d
-Successfully built e2b6b9281665
+ ---> Running in a994d8bde437
+ ---> 1b8fdecb6586
+Removing intermediate container a994d8bde437
+Successfully built 1b8fdecb6586
 [INFO] Built bakalarka/turbinehystrixdashboard
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 17.047 s
-[INFO] Finished at: 2017-05-20T22:17:00+02:00
-[INFO] Final Memory: 51M/412M
+[INFO] Total time: 32.623 s
+[INFO] Finished at: 2017-05-21T15:02:35+02:00
+[INFO] Final Memory: 52M/429M
 [INFO] ------------------------------------------------------------------------

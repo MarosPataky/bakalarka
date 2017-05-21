@@ -16,8 +16,15 @@ import sk.pataky.client.dto.ShippingOptionDto;
 import sk.pataky.client.dto.StoreDto;
 import sk.pataky.dto.CalculationDto;
 import sk.pataky.dto.CalculationItemEntry;
+import sk.pataky.dto.CalculationResponseDto;
+import sk.pataky.dto.CalculationResponseShippingOptionDto;
+import sk.pataky.dto.CalculationResponseShoppingOption;
+import sk.pataky.dto.CalculationResponseStoreLocationDto;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -39,30 +46,82 @@ public class CalculateController {
     ShippingServiceClient shippingServiceClient;
 
     @RequestMapping(method = RequestMethod.POST)
-    public int getAll(@RequestBody CalculationDto calculationDto) {
+    public CalculationResponseDto getAll(@RequestBody CalculationDto calculationDto) {
 
+        CalculationResponseDto calculationResponseDto = new CalculationResponseDto();
+
+        List<CalculationResponseShoppingOption> calculationResponseShoppingOptions = new ArrayList<>();
+
+//        Map<String, CalculationResponseShoppingOption> calculationResponseShoppingOptionsMap = new HashMap<>();
+
+//        CalculationResponseShoppingOption calculationResponseShoppingOption = new CalculationResponseShoppingOption();
+
+        // prepare calculated shops
+        for (String shopBrand : calculationDto.shopBrands) {
+            CalculationResponseShoppingOption calculationResponseShoppingOption = new CalculationResponseShoppingOption();
+            calculationResponseShoppingOption.brand = shopBrand;
+            calculationResponseShoppingOption.missingInShop = new ArrayList<>();
+            calculationResponseShoppingOption.totalPrice = 0L;
+            calculationResponseShoppingOptions.add(calculationResponseShoppingOption);
+        }
+
+
+
+        // fetch each item and create a calculation item entry
         for (CalculationItemEntry item : calculationDto.items) {
             ItemDetailDto itemResponse = itemServiceClient.getDetail(item.id);
             LOGGER.info("Found item {}", itemResponse);
-            // fetch each item and create a calculation item entry
+
+            calculationResponseShoppingOptions.forEach(calculationResponseShoppingOption -> {
+                Long priceForShop = itemResponse.prices.get(calculationResponseShoppingOption.brand);
+                if (priceForShop != null) {
+                    calculationResponseShoppingOption.totalPrice = calculationResponseShoppingOption.totalPrice + (priceForShop * item.quantity);
+                } else {
+                    calculationResponseShoppingOption.missingInShop.add(item);
+                }
+            });
         }
 
+        // set calculated prices to DTO
+        calculationResponseDto.shoppingOptions = calculationResponseShoppingOptions;
+
+
         if (calculationDto.shipping != null) {
+            List<CalculationResponseShippingOptionDto> shippingOptionDtos = new ArrayList<>();
             // should look for shipping
             List<ShippingOptionDto> shippingOptions = shippingServiceClient.findShippingOptions(calculationDto.shipping.lat, calculationDto.shipping.lon);
+
+            shippingOptions.forEach(shippingOptionDto -> {
+                CalculationResponseShippingOptionDto dto = new CalculationResponseShippingOptionDto();
+                dto.name = shippingOptionDto.name;
+                dto.shippingCost = shippingOptionDto.shippingCost;
+                shippingOptionDtos.add(dto);
+            });
+
+            calculationResponseDto.shipping = shippingOptionDtos;
             LOGGER.info("Found {} shipping options", shippingOptions.size());
         }
 
         if (calculationDto.location != null) {
+            List<CalculationResponseStoreLocationDto> storeLocationDtos = new ArrayList<>();
+
             // look for shops
             List<StoreDto> shopsNearby = shopServiceClient.findShopsNearby(calculationDto.location.lat, calculationDto.location.lon, calculationDto.location.maxDistance);
+
+            // convert to dto and add to list
+            shopsNearby.forEach(storeDto -> {
+                CalculationResponseStoreLocationDto dto = new CalculationResponseStoreLocationDto();
+                dto.brand = storeDto.brand;
+                dto.lat = storeDto.location.lat;
+                dto.lon = storeDto.location.lon;
+                storeLocationDtos.add(dto);
+            });
+            calculationResponseDto.stores = storeLocationDtos;
             LOGGER.info("Found shops nearBy {}", shopsNearby.size());
         }
 
 
-//        LOGGER.info("ShopserivceClient retuned {}", );
-//        LOGGER.info("ItemServiceClient retuned {}",);
 
-        return 2;
+        return calculationResponseDto;
     }
 }

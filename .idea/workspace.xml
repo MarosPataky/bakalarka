@@ -2,52 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a61ca034-4c70-4881-a56c-5f23fedd373a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/CoordinateDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/PolygonDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/ShippingOptionDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationShippingDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationUserPositionDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShippingOptionsResponseDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShoppingOption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/StoreLocationResponseDto.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationShippingDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationRequestShippingDto.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShippingOptionsResponseDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShippingOptionDto.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShoppingOption.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShoppingOption.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/StoreLocationResponseDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseStoreLocationDto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redux-voting-client" afterPath="$PROJECT_DIR$/redux-voting-client" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ApiGateway/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/ApiGateway/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthService/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/AuthService/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/controller/UserController.java" afterPath="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/pom.xml" afterPath="$PROJECT_DIR$/CalculationService/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/CalculationService/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShippingServiceClient.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShippingServiceClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShopServiceClient.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShopServiceClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/StoreDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/StoreDto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/CalculationService/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ItemController.java" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ItemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ShoppingListController.java" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ShoppingListController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/repository/ItemRepository.java" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/repository/ItemRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/ItemService.java" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/ItemService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/impl/ItemServiceImpl.java" afterPath="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/impl/ItemServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceTemplate/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/ServiceTemplate/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShippingService/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/ShippingService/src/main/docker/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java" afterPath="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java" afterPath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/model/ShippingOption.java" afterPath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/model/ShippingOption.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/service/ShippingOptionServiceImpl.java" afterPath="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/service/ShippingOptionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShippingService/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/ShippingService/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopService/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/ShopService/src/main/docker/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/controller/ShopController.java" afterPath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/controller/ShopController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/dto/CreateStoreDto.java" afterPath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/dto/CreateStoreDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/model/Store.java" afterPath="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/model/Store.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TurbineHystrixDashboard/src/main/docker/Dockerfile" afterPath="$PROJECT_DIR$/TurbineHystrixDashboard/src/main/docker/Dockerfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.out" afterPath="$PROJECT_DIR$/build.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/apiGateway/application.yml" afterPath="$PROJECT_DIR$/configs/apiGateway/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/common/application.yml" afterPath="$PROJECT_DIR$/configs/common/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/shippingService/application.yml" afterPath="$PROJECT_DIR$/configs/shippingService/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/turbineHystrixDashboard/application.yml" afterPath="$PROJECT_DIR$/configs/turbineHystrixDashboard/application.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
     </list>
     <ignored path="bakalarka.iws" />
@@ -81,101 +52,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CalculateController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java">
+      <file leaf-file-name="ShippingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="58" column="55" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+            <state relative-caret-position="218">
+              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/resources/bootstrap.yml">
+        <entry file="file://$PROJECT_DIR$/ShippingService/src/main/resources/bootstrap.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemServiceClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ItemServiceClient.java">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AuthService/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="270">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShopServiceClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShopServiceClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShippingServiceClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShippingServiceClient.java">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ShippingService/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/Application.java">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configs/shopService/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/configs/common/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculationDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculationUserPositionDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationUserPositionDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculationShippingDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationShippingDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -209,14 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/AuthService/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/configs/shippingService/application.yml" />
-        <option value="$PROJECT_DIR$/AuthService/src/main/docker/Dockerfile" />
-        <option value="$PROJECT_DIR$/ShippingService/src/main/docker/Dockerfile" />
-        <option value="$PROJECT_DIR$/ServiceTemplate/src/main/docker/Dockerfile" />
-        <option value="$PROJECT_DIR$/delivery/Dockerfile" />
-        <option value="$PROJECT_DIR$/ApiGateway/src/main/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/ItemManagementService/src/main/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/ShopService/src/main/docker/Dockerfile" />
@@ -229,24 +192,17 @@
         <option value="$PROJECT_DIR$/delivery/shopservice/Dockerfile" />
         <option value="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/controller/ShopController.java" />
         <option value="$PROJECT_DIR$/ShippingService/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java" />
         <option value="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationShippingDto.java" />
         <option value="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/service/ShippingOptionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShoppingOption.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationUserPositionDto.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShippingOptionsResponseDto.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/StoreLocationResponseDto.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java" />
         <option value="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/dto/CreateStoreDto.java" />
         <option value="$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/model/Store.java" />
         <option value="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/model/ShippingOption.java" />
         <option value="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/repository/ItemRepository.java" />
         <option value="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/impl/ItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/configs/apiGateway/application.yml" />
         <option value="$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/controller/ShoppingListController.java" />
         <option value="$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/ShippingOptionDto.java" />
@@ -254,12 +210,27 @@
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/dto/ItemDetailDto.java" />
         <option value="$PROJECT_DIR$/CalculationService/pom.xml" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java" />
-        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShopServiceClient.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ShippingServiceClient.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/client/ItemServiceClient.java" />
         <option value="$PROJECT_DIR$/CalculationService/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationRequestShippingDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/StoreLocationResponseDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShippingOptionsResponseDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShippingOptionDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseStoreLocationDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/ShoppingOption.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShoppingOption.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java" />
+        <option value="$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java" />
+        <option value="$PROJECT_DIR$/configs/shippingService/application.yml" />
+        <option value="$PROJECT_DIR$/configs/turbineHystrixDashboard/application.yml" />
+        <option value="$PROJECT_DIR$/configs/apiGateway/application.yml" />
+        <option value="$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java" />
+        <option value="$PROJECT_DIR$/configs/common/application.yml" />
       </list>
     </option>
   </component>
@@ -391,7 +362,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CalculationService" />
+              <option name="myItemId" value="ShippingService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,7 +376,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CalculationService" />
+              <option name="myItemId" value="ShippingService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -416,6 +387,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -427,7 +402,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CalculationService" />
+              <option name="myItemId" value="ShippingService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -457,7 +432,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CalculationService" />
+              <option name="myItemId" value="ShippingService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -481,6 +456,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShippingService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bakalarka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -497,6 +526,7 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="SearchEverywhereHistoryKey" value="private void addServiceData(JsonGenerator json)&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1046,7 +1076,7 @@
       <workItem from="1493295631659" duration="573000" />
       <workItem from="1494149130835" duration="37239000" />
       <workItem from="1494605674180" duration="1481000" />
-      <workItem from="1494767423910" duration="51600000" />
+      <workItem from="1494767423910" duration="54953000" />
     </task>
     <servers />
   </component>
@@ -1059,11 +1089,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174157000" />
+    <option name="totallyTimeSpent" value="177510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-257" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1078,15 +1108,15 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32154006" sideWeight="0.4968051" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32154006" sideWeight="0.4968051" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1176,19 +1206,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java</url>
-          <line>52</line>
+          <line>101</line>
           <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java</url>
-          <line>45</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
@@ -1202,120 +1226,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/dto/CreateStoreDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/service/impl/StoreServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/service/StoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/controller/ShopController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/model/ShippingOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/model/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/dto/CreateItemDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/model/ItemQuantityUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/ItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/repository/ItemRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/java/sk/pataky/service/impl/ItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/authService/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/apiGateway/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AuthService/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AuthService/src/main/java/sk/pataky/security/config/resource/ResourceServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1446,14 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="54" selection-end-column="119" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShopService/src/main/java/sk/pataky/dto/StoreDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1494,58 +1396,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/common/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShippingService/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationShippingDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationUserPositionDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1590,26 +1444,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="58" column="55" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CalculationService/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <marker date="1495363866000" expanded="true" signature="594:794" ph="---" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationRequestShippingDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShippingOptionDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseStoreLocationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationItemEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationResponseShoppingOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/dto/CalculationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/calculationService/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/java/sk/pataky/controller/CalculateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1299">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShippingService/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/apiGateway/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/turbineHystrixDashboard/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/shippingService/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/shopService/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state relative-caret-position="383">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AuthService/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CalculationService/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServiceTemplate/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShippingService/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ItemManagementService/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShippingService/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShippingService/src/main/java/sk/pataky/controller/ShippingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/common/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="20" />
           <folding />
         </state>
       </provider>

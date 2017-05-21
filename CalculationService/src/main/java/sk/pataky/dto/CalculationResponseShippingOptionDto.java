@@ -3,7 +3,7 @@ package sk.pataky.dto;
 /**
  *
  */
-public class ShippingOptionsResponseDto {
+public class CalculationResponseShippingOptionDto {
     public String name;
     public Long shippingCost;
 }

@@ -3,8 +3,7 @@ package sk.pataky.dto;
 /**
  *
  */
-public class StoreLocationResponseDto {
-
+public class CalculationResponseStoreLocationDto {
     public String brand;
     public Double lat;
     public Double lon;
