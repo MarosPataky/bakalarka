@@ -13,10 +13,9 @@ spring:
         ## folder name that all apps read
         default-context: common
         fail-fast: true
+        ## do not fail if consul is not available
       host: localhost
       port: 8500
-
-
 ---
 spring:
   profiles: docker

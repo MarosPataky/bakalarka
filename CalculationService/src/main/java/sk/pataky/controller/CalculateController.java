@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import sk.pataky.client.ShippingServiceClient;
 import sk.pataky.client.ItemServiceClient;
+import sk.pataky.client.ShippingServiceClient;
 import sk.pataky.client.ShopServiceClient;
+import sk.pataky.client.cache.ItemResponseCache;
 import sk.pataky.client.dto.ItemDetailDto;
 import sk.pataky.client.dto.ShippingOptionDto;
 import sk.pataky.client.dto.StoreDto;
@@ -22,9 +23,7 @@ import sk.pataky.dto.CalculationResponseShoppingOption;
 import sk.pataky.dto.CalculationResponseStoreLocationDto;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -37,13 +36,16 @@ public class CalculateController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CalculateController.class);
 
     @Autowired
-    ShopServiceClient shopServiceClient;
+    private ShopServiceClient shopServiceClient;
 
     @Autowired
-    ItemServiceClient itemServiceClient;
+    private ItemServiceClient itemServiceClient;
 
     @Autowired
-    ShippingServiceClient shippingServiceClient;
+    private ShippingServiceClient shippingServiceClient;
+
+    @Autowired
+    private ItemResponseCache itemResponseCache;
 
     @RequestMapping(method = RequestMethod.POST)
     public CalculationResponseDto getAll(@RequestBody CalculationDto calculationDto) {
@@ -70,6 +72,7 @@ public class CalculateController {
         // fetch each item and create a calculation item entry
         for (CalculationItemEntry item : calculationDto.items) {
             ItemDetailDto itemResponse = itemServiceClient.getDetail(item.id);
+            itemResponseCache.put(itemResponse.id, itemResponse);
             LOGGER.info("Found item {}", itemResponse);
 
             calculationResponseShoppingOptions.forEach(calculationResponseShoppingOption -> {
