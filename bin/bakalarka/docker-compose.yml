@@ -1,0 +1,86 @@
+version: "2.0"
+services:
+  consul:
+    image: consul:latest
+    ports:
+      - "8500:8500"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+  start_dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - consul
+    command: consul:8500
+
+    #### system services ####
+  apigateway:
+    build: ./apigateway
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+    ports:
+      - "8080:8080"
+  authservice:
+    build: ./authservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+  itemmanagementservice:
+    build: ./itemmanagementservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+  shopservice:
+    build: ./shopservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+  calculationservice:
+    build: ./calculationservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+  shippingservice:
+    build: ./shippingservice
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+  turbinehystrixdashboard:
+    build: ./turbinehystrixdashboard
+    mem_limit: 400m
+    depends_on:
+      - start_dependencies
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTIONS=-Xmx200m
+    ports:
+      - "8081:8080"
+
+      
+  
+    
+  

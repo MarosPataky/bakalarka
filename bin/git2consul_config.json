@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "repos" : [{
+    "name" : "configuration",
+    "url" : "path_to_git_repository/.git",
+    "source_root": "configs",
+    "include_branch_name" : false,
+    "branches" : ["master"],
+    "hooks": [{
+      "type" : "polling",
+      "interval" : "1"
+    }]
+  }]
+}

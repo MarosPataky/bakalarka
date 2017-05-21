@@ -22,13 +22,13 @@ security:
     public:
       key: |
         -----BEGIN PUBLIC KEY-----
-        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwR84LFHwnK5GXErnwkmD
-        mPOJl4CSTtYXCqmCtlbF+5qVOosu0YsM2DsrC9O2gun6wVFKkWYiMoBSjsNMSI3Z
-        w5JYgh+ldHvA+MIex2QXfOZx920M1fPUiuUPgmnTFS+Z3lmK3/T6jJnmciUPY1pe
-        h4MXL6YzeI0q4W9xNBBeKT6FDGpduc0FC3OlXHfLbVOThKmAUpAWFDwf9/uUA//l
-        3PLchmV6VwTcUaaHp5W8Af/GU4lPGZbTAqOxzB9ukisPFuO1DikacPhrOQgdxtqk
-        LciRTa884uQnkFwSguOEUYf3ni8GNRJauIuW0rVXhMOs78pKvCKmo53M0tqeC6ul
-        +QIDAQAB
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5OkvKiGATSjBBMTsNzwa
+        X85ZpmV/kREwRT6k5FYtE23RhRwDtSwaeIUmNBfmwbflQv//OMRokZqt/b0+d0M6
+        gDJ8qHFrfruPpLURznAE/SS+e6bBbxuVEN7exEkf+W2vLehm5P9W0Plf1CopMy/O
+        h40/yAPmvTLSOcPxvOaFsFPha43nZHzaNXNRXjYRELRXufpkoC+gisnXeQpR21AY
+        SFWL83CrjlM/1QaPMN5QwugjeFl28HBxgTjLP6XxI6kBYD/CjToW+UlpAuI/IE7Z
+        hRV6QZqAhJ3czJiB4qSFp42/+7/APHLkks5Z3Jl9F9R36m+lb0v+45QicqDXBHzA
+        gwIDAQAB
         -----END PUBLIC KEY-----
 
 server:
