@@ -1,0 +1,343 @@
+48.7310964,21.2856778 na fruci
+
+mimo furce
+48.7288626,21.272461
+
+
+
+ShippingOption shippingOption = new ShippingOption();
+shippingOption.setShippingProviderName("kurier.sk");
+shippingOption.setShippingCost(199L);
+GeoJsonPolygon geoJsonPolygon = new GeoJsonPolygon(new Point(21.27846,48.74928),
+        new Point(21.27142,48.74374),
+        new Point(21.27133,48.74164),
+        new Point(21.27382,48.7378),
+        new Point(21.27683,48.73236),
+        new Point(21.27743,48.72755),
+        new Point(21.27588,48.72166),
+        new Point(21.28206,48.72274),
+        new Point(21.29079,48.72111),
+        new Point(21.29374,48.72404),
+        new Point(21.2923,48.72916),
+        new Point(21.29657,48.73055),
+        new Point(21.30258,48.72234),
+        new Point(21.31562,48.72274),
+        new Point(21.31343,48.72968),
+        new Point(21.29824,48.74037),
+        new Point(21.27846,48.74928));
+
+shippingOption.setLocation(geoJsonPolygon);
+
+shippingOptionRepository.save(shippingOption);
+
+
+
+object:
+
+[
+  {
+    "id": "592035c0f886179128c6c9b6",
+    "shippingProviderName": "kurier.sk",
+    "shippingCost": 199,
+    "location": {
+      "points": [
+        {
+          "x": 21.27846,
+          "y": 48.74928,
+          "type": "Point",
+          "coordinates": [
+            21.27846,
+            48.74928
+          ]
+        },
+        {
+          "x": 21.27142,
+          "y": 48.74374,
+          "type": "Point",
+          "coordinates": [
+            21.27142,
+            48.74374
+          ]
+        },
+        {
+          "x": 21.27133,
+          "y": 48.74164,
+          "type": "Point",
+          "coordinates": [
+            21.27133,
+            48.74164
+          ]
+        },
+        {
+          "x": 21.27382,
+          "y": 48.7378,
+          "type": "Point",
+          "coordinates": [
+            21.27382,
+            48.7378
+          ]
+        },
+        {
+          "x": 21.27683,
+          "y": 48.73236,
+          "type": "Point",
+          "coordinates": [
+            21.27683,
+            48.73236
+          ]
+        },
+        {
+          "x": 21.27743,
+          "y": 48.72755,
+          "type": "Point",
+          "coordinates": [
+            21.27743,
+            48.72755
+          ]
+        },
+        {
+          "x": 21.27588,
+          "y": 48.72166,
+          "type": "Point",
+          "coordinates": [
+            21.27588,
+            48.72166
+          ]
+        },
+        {
+          "x": 21.28206,
+          "y": 48.72274,
+          "type": "Point",
+          "coordinates": [
+            21.28206,
+            48.72274
+          ]
+        },
+        {
+          "x": 21.29079,
+          "y": 48.72111,
+          "type": "Point",
+          "coordinates": [
+            21.29079,
+            48.72111
+          ]
+        },
+        {
+          "x": 21.29374,
+          "y": 48.72404,
+          "type": "Point",
+          "coordinates": [
+            21.29374,
+            48.72404
+          ]
+        },
+        {
+          "x": 21.2923,
+          "y": 48.72916,
+          "type": "Point",
+          "coordinates": [
+            21.2923,
+            48.72916
+          ]
+        },
+        {
+          "x": 21.29657,
+          "y": 48.73055,
+          "type": "Point",
+          "coordinates": [
+            21.29657,
+            48.73055
+          ]
+        },
+        {
+          "x": 21.30258,
+          "y": 48.72234,
+          "type": "Point",
+          "coordinates": [
+            21.30258,
+            48.72234
+          ]
+        },
+        {
+          "x": 21.31562,
+          "y": 48.72274,
+          "type": "Point",
+          "coordinates": [
+            21.31562,
+            48.72274
+          ]
+        },
+        {
+          "x": 21.31343,
+          "y": 48.72968,
+          "type": "Point",
+          "coordinates": [
+            21.31343,
+            48.72968
+          ]
+        },
+        {
+          "x": 21.29824,
+          "y": 48.74037,
+          "type": "Point",
+          "coordinates": [
+            21.29824,
+            48.74037
+          ]
+        }
+      ],
+      "coordinates": [
+        {
+          "type": "LineString",
+          "coordinates": [
+            {
+              "x": 21.27846,
+              "y": 48.74928,
+              "type": "Point",
+              "coordinates": [
+                21.27846,
+                48.74928
+              ]
+            },
+            {
+              "x": 21.27142,
+              "y": 48.74374,
+              "type": "Point",
+              "coordinates": [
+                21.27142,
+                48.74374
+              ]
+            },
+            {
+              "x": 21.27133,
+              "y": 48.74164,
+              "type": "Point",
+              "coordinates": [
+                21.27133,
+                48.74164
+              ]
+            },
+            {
+              "x": 21.27382,
+              "y": 48.7378,
+              "type": "Point",
+              "coordinates": [
+                21.27382,
+                48.7378
+              ]
+            },
+            {
+              "x": 21.27683,
+              "y": 48.73236,
+              "type": "Point",
+              "coordinates": [
+                21.27683,
+                48.73236
+              ]
+            },
+            {
+              "x": 21.27743,
+              "y": 48.72755,
+              "type": "Point",
+              "coordinates": [
+                21.27743,
+                48.72755
+              ]
+            },
+            {
+              "x": 21.27588,
+              "y": 48.72166,
+              "type": "Point",
+              "coordinates": [
+                21.27588,
+                48.72166
+              ]
+            },
+            {
+              "x": 21.28206,
+              "y": 48.72274,
+              "type": "Point",
+              "coordinates": [
+                21.28206,
+                48.72274
+              ]
+            },
+            {
+              "x": 21.29079,
+              "y": 48.72111,
+              "type": "Point",
+              "coordinates": [
+                21.29079,
+                48.72111
+              ]
+            },
+            {
+              "x": 21.29374,
+              "y": 48.72404,
+              "type": "Point",
+              "coordinates": [
+                21.29374,
+                48.72404
+              ]
+            },
+            {
+              "x": 21.2923,
+              "y": 48.72916,
+              "type": "Point",
+              "coordinates": [
+                21.2923,
+                48.72916
+              ]
+            },
+            {
+              "x": 21.29657,
+              "y": 48.73055,
+              "type": "Point",
+              "coordinates": [
+                21.29657,
+                48.73055
+              ]
+            },
+            {
+              "x": 21.30258,
+              "y": 48.72234,
+              "type": "Point",
+              "coordinates": [
+                21.30258,
+                48.72234
+              ]
+            },
+            {
+              "x": 21.31562,
+              "y": 48.72274,
+              "type": "Point",
+              "coordinates": [
+                21.31562,
+                48.72274
+              ]
+            },
+            {
+              "x": 21.31343,
+              "y": 48.72968,
+              "type": "Point",
+              "coordinates": [
+                21.31343,
+                48.72968
+              ]
+            },
+            {
+              "x": 21.29824,
+              "y": 48.74037,
+              "type": "Point",
+              "coordinates": [
+                21.29824,
+                48.74037
+              ]
+            }
+          ]
+        }
+      ],
+      "type": "Polygon"
+    }
+  }
+]

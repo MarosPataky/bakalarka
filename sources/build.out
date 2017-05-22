@@ -1,0 +1,40 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Hystrix Dashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ turbinehystrixdashboard ---
+[INFO] Deleting /Users/macbook/Documents/bakalarka/sources/TurbineHystrixDashboard/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbinehystrixdashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbinehystrixdashboard ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/macbook/Documents/bakalarka/sources/TurbineHystrixDashboard/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbinehystrixdashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/macbook/Documents/bakalarka/sources/TurbineHystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbinehystrixdashboard ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/macbook/Documents/bakalarka/sources/TurbineHystrixDashboard/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ turbinehystrixdashboard ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ turbinehystrixdashboard ---
+[INFO] Building jar: /Users/macbook/Documents/bakalarka/sources/TurbineHystrixDashboard/target/turbinehystrixdashboard-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.2.RELEASE:repackage (default) @ turbinehystrixdashboard ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.357 s
+[INFO] Finished at: 2017-05-22T08:49:31+02:00
+[INFO] Final Memory: 36M/284M
+[INFO] ------------------------------------------------------------------------
